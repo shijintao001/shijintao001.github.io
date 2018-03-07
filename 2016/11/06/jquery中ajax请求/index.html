@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小石头">
 <meta property="og:description" content="jquery 中ajax 请求的步骤AJAX 技术 即Asychronous Javascript And XML ,AJAX 并非是一门新的语言 而是对现有的技术的综合利用   本质 上是 HTTP协议的基础上以异步的方式通过js的XMLHttpRequest对象与服务器进行通信  作用 ： 可以在页面不刷新的情况下，请求服务器，局部更新页面的数据 $.ajax() 参数列表 | 参数名称">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-07T02:14:35.726Z">
+<meta property="og:updated_time" content="2018-03-07T09:30:39.999Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jquery中的ajax 请求的步骤？怎么解决跨域">
 <meta name="twitter:description" content="jquery 中ajax 请求的步骤AJAX 技术 即Asychronous Javascript And XML ,AJAX 并非是一门新的语言 而是对现有的技术的综合利用   本质 上是 HTTP协议的基础上以异步的方式通过js的XMLHttpRequest对象与服务器进行通信  作用 ： 可以在页面不刷新的情况下，请求服务器，局部更新页面的数据 $.ajax() 参数列表 | 参数名称">
@@ -352,36 +352,75 @@
 <p>$.ajax()</p>
 <p>参数列表</p>
 <p>| 参数名称       | 描述       | 取值                | 示例                                       |<br>| ———- | ——– | —————– | —————————————- |<br>| url        | 接口地址     |                   | url:’01.index’                           |<br>| type       | 请求方式     | get/post          | type:’get’                               |<br>| timeout    | 超时时间     | 单位毫秒              | timeout：2000                             |<br>| dataType   | 服务器返回的格式 | json/xml/text（默认） | data:”json”                              |<br>| data       | 发送的请求数据  | 对象                | data:{name:’zs’,age:18}                  |<br>| beforeSend | 调用前的回调函数 | function(){}      | beforeSend:function(){console.log(‘发送前的数据’)} |<br>| success    | 成功的回调函数  | function(info){}  | success:function(info){console.log(info)} |<br>| error      | 失败的回调函数  | function(error){} | error:function(data){console.log(‘发送失败’)} |<br>| complete   | 完成后的回调函数 | function(){}      | complete:function(){}                    |</p>
-<p>​</p>
 </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    type:<span class="string">"get/post"</span>,<span class="comment">//请求类型</span></span><br><span class="line">  	url:<span class="string">'01.php'</span>,<span class="comment">//请求地址</span></span><br><span class="line">  	data:&#123;</span><br><span class="line">    name:<span class="string">'zs'</span>,</span><br><span class="line">  	age:<span class="number">18</span></span><br><span class="line">&#125;,<span class="comment">//请求数据</span></span><br><span class="line">  dataType:<span class="string">'text'</span>,</span><br><span class="line">  timeout:<span class="number">2000</span>,<span class="comment">//设置超时时间</span></span><br><span class="line">  beforeSend:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"发送前的数据"</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  success:<span class="function"><span class="keyword">function</span>(<span class="params">info</span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(info);</span><br><span class="line">  &#125;,</span><br><span class="line">  error:<span class="function"><span class="keyword">function</span>(<span class="params">error</span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(error);</span><br><span class="line">  &#125;,</span><br><span class="line">  complete:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"请求完成"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
-<th>1</th>
-<th>2</th>
-<th>3</th>
+<th>参数名称</th>
+<th>描述</th>
+<th>取值</th>
+<th>示例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>2</td>
-<td>3</td>
+<td>url</td>
+<td>接口地址</td>
+<td></td>
+<td>··url:’01.index’</td>
 </tr>
 <tr>
-<td>1</td>
-<td>2</td>
-<td>3</td>
+<td>type</td>
+<td>请求方式</td>
+<td>get/post</td>
+<td>type:’get’</td>
 </tr>
 <tr>
-<td>3</td>
-<td>2</td>
-<td>1</td>
+<td>timeout</td>
+<td>超时时间</td>
+<td>单位毫秒</td>
+<td>timeout：2000</td>
+</tr>
+<tr>
+<td>dataType</td>
+<td>服务器返回的格式</td>
+<td>json/xml/text（默认）</td>
+<td>data:”json”</td>
+</tr>
+<tr>
+<td>data</td>
+<td>发送的请求数据</td>
+<td>对象</td>
+<td>data:{name:’zs’,age:18}</td>
+</tr>
+<tr>
+<td>beforeSend</td>
+<td>调用前的回调函数</td>
+<td>function(){}</td>
+<td>beforeSend:function(){console.log(‘发送前的数据’)}</td>
+</tr>
+<tr>
+<td>success</td>
+<td>成功的回调函数</td>
+<td>function(info){}</td>
+<td>success:function(info){console.log(info)}</td>
+</tr>
+<tr>
+<td>error</td>
+<td>失败的回调函数</td>
+<td>function(error){}</td>
+<td>error:function(data){console.log(‘发送失败’)}</td>
+</tr>
+<tr>
+<td>complete</td>
+<td>完成后的回调函数</td>
+<td>function(){}</td>
+<td>complete:function(){}</td>
 </tr>
 </tbody>
 </table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    type:<span class="string">"get/post"</span>,<span class="comment">//请求类型</span></span><br><span class="line">  	url:<span class="string">'01.php'</span>,<span class="comment">//请求地址</span></span><br><span class="line">  	data:&#123;</span><br><span class="line">    name:<span class="string">'zs'</span>,</span><br><span class="line">  	age:<span class="number">18</span></span><br><span class="line">&#125;,<span class="comment">//请求数据</span></span><br><span class="line">  dataType:<span class="string">'text'</span>,</span><br><span class="line">  timeout:<span class="number">2000</span>,<span class="comment">//设置超时时间</span></span><br><span class="line">  beforeSend:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"发送前的数据"</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  success:<span class="function"><span class="keyword">function</span>(<span class="params">info</span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(info);</span><br><span class="line">  &#125;,</span><br><span class="line">  error:<span class="function"><span class="keyword">function</span>(<span class="params">error</span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(error);</span><br><span class="line">  &#125;,</span><br><span class="line">  complete:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"请求完成"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h1 id="怎么解决跨域问题"><a href="#怎么解决跨域问题" class="headerlink" title="怎么解决跨域问题"></a>怎么解决跨域问题</h1><p>在跨域的情况下，不能发送 ajax请求 （不能使用XMLHttpRequest 对象发送请求，会被浏览器限制）就算你将dataType 设置为jsonp，仍然不能使用XMLHttpRequest 对象发送请求，而是使用其他的方式来请求的服务器</p>
 <p>//这种方式 叫JSONP json with padding  用json 进行填充</p>
 <p>跨域的情况下 不能使用XMLHttpRequest 对象</p>
