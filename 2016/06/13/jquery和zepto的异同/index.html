@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="学习,javascript," />
+  <meta name="keywords" content="学习,随笔,jquery," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="jquery 中ajax 请求的步骤AJAX 技术 即Asychronous Javascript And XML ,AJAX 并非是一门新的语言 而是对现有的技术的综合利用   本质 上是 HTTP协议的基础上以异步的方式通过js的XMLHttpRequest对象与服务器进行通信  作用 ： 可以在页面不刷新的情况下，请求服务器，局部更新页面的数据 $.ajax() 参数列表      参数名称">
-<meta name="keywords" content="学习,javascript">
+<meta name="description" content="jquery和zepto的异同相同点 相同点:  zepto: 是jquery 的 阉割版 是为移动端开发的库 jQuery的轻量级替代品。文件大小比较小 只有8k左右 ,是目前功能库中最小的一个，尽管不大，zepto 所提供的工具足以满足开发程序的需要，大多数在jquery中常用的API和方法Zepto 都有，Zepto 和API大部分都能和jquery兼容 所以用起来和jquery差不多 jQ">
+<meta name="keywords" content="学习,随笔,jquery">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jquery中的ajax 请求的步骤？怎么解决跨域">
-<meta property="og:url" content="http://yoursite.com/2016/11/06/jquery中ajax请求/index.html">
+<meta property="og:title" content="jquery和zepto的异同">
+<meta property="og:url" content="http://yoursite.com/2016/06/13/jquery和zepto的异同/index.html">
 <meta property="og:site_name" content="小石头">
-<meta property="og:description" content="jquery 中ajax 请求的步骤AJAX 技术 即Asychronous Javascript And XML ,AJAX 并非是一门新的语言 而是对现有的技术的综合利用   本质 上是 HTTP协议的基础上以异步的方式通过js的XMLHttpRequest对象与服务器进行通信  作用 ： 可以在页面不刷新的情况下，请求服务器，局部更新页面的数据 $.ajax() 参数列表      参数名称">
+<meta property="og:description" content="jquery和zepto的异同相同点 相同点:  zepto: 是jquery 的 阉割版 是为移动端开发的库 jQuery的轻量级替代品。文件大小比较小 只有8k左右 ,是目前功能库中最小的一个，尽管不大，zepto 所提供的工具足以满足开发程序的需要，大多数在jquery中常用的API和方法Zepto 都有，Zepto 和API大部分都能和jquery兼容 所以用起来和jquery差不多 jQ">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-07T09:34:01.772Z">
+<meta property="og:updated_time" content="2018-03-07T16:52:42.219Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jquery中的ajax 请求的步骤？怎么解决跨域">
-<meta name="twitter:description" content="jquery 中ajax 请求的步骤AJAX 技术 即Asychronous Javascript And XML ,AJAX 并非是一门新的语言 而是对现有的技术的综合利用   本质 上是 HTTP协议的基础上以异步的方式通过js的XMLHttpRequest对象与服务器进行通信  作用 ： 可以在页面不刷新的情况下，请求服务器，局部更新页面的数据 $.ajax() 参数列表      参数名称">
+<meta name="twitter:title" content="jquery和zepto的异同">
+<meta name="twitter:description" content="jquery和zepto的异同相同点 相同点:  zepto: 是jquery 的 阉割版 是为移动端开发的库 jQuery的轻量级替代品。文件大小比较小 只有8k左右 ,是目前功能库中最小的一个，尽管不大，zepto 所提供的工具足以满足开发程序的需要，大多数在jquery中常用的API和方法Zepto 都有，Zepto 和API大部分都能和jquery兼容 所以用起来和jquery差不多 jQ">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/11/06/jquery中ajax请求/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/06/13/jquery和zepto的异同/"/>
 
 
 
 
 
-  <title>jquery中的ajax 请求的步骤？怎么解决跨域 | 小石头</title>
+  <title>jquery和zepto的异同 | 小石头</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/06/jquery中ajax请求/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/13/jquery和zepto的异同/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="石头">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">jquery中的ajax 请求的步骤？怎么解决跨域</h1>
+          <h1 class="post-title" itemprop="name headline">jquery和zepto的异同</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-06T20:28:24+08:00">
-                2016-11-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-13T14:47:47+08:00">
+                2016-06-13
               </time>
             
 
@@ -342,105 +342,32 @@
       
 
       
-        <h1 id="jquery-中ajax-请求的步骤"><a href="#jquery-中ajax-请求的步骤" class="headerlink" title="jquery 中ajax 请求的步骤"></a>jquery 中ajax 请求的步骤</h1><h2 id="AJAX-技术"><a href="#AJAX-技术" class="headerlink" title="AJAX 技术"></a>AJAX 技术</h2><blockquote>
-<p>即Asychronous Javascript And XML ,AJAX 并非是一门新的语言 而是对现有的技术的综合利用</p>
+        <h1 id="jquery和zepto的异同"><a href="#jquery和zepto的异同" class="headerlink" title="jquery和zepto的异同"></a>jquery和zepto的异同</h1><h2 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h2><blockquote>
+<p>相同点:</p>
 </blockquote>
-<ul>
-<li><p>本质 上是 HTTP协议的基础上以异步的方式通过js的XMLHttpRequest对象与服务器进行通信</p>
-</li>
-<li><p>作用 ： 可以在页面不刷新的情况下，请求服务器，局部更新页面的数据</p>
-<p>$.ajax()</p>
-<p>参数列表</p>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>参数名称</th>
-<th>描述</th>
-<th>取值</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>url</td>
-<td>接口地址</td>
-<td></td>
-<td><code>url:&#39;01.index&#39;</code></td>
-</tr>
-<tr>
-<td>type</td>
-<td>请求方式</td>
-<td>get/post</td>
-<td>type:’get’</td>
-</tr>
-<tr>
-<td>timeout</td>
-<td>超时时间</td>
-<td>单位毫秒</td>
-<td>timeout：2000</td>
-</tr>
-<tr>
-<td>dataType</td>
-<td>服务器返回的格式</td>
-<td>json/xml/text（默认）</td>
-<td>data:”json”</td>
-</tr>
-<tr>
-<td>data</td>
-<td>发送的请求数据</td>
-<td>对象</td>
-<td><code>data:{name:&#39;zs&#39;,age:18}</code></td>
-</tr>
-<tr>
-<td>beforeSend</td>
-<td>调用前的回调函数</td>
-<td>function(){}</td>
-<td><code>beforeSend:function(){console.log(&#39;发送前的数据&#39;)}</code></td>
-</tr>
-<tr>
-<td>success</td>
-<td>成功的回调函数</td>
-<td>function(info){}</td>
-<td><code>success:function(info){console.log(info)}</code></td>
-</tr>
-<tr>
-<td>error</td>
-<td>失败的回调函数</td>
-<td>function(error){}</td>
-<td><code>error:function(data){console.log(&#39;发送失败&#39;)}</code></td>
-</tr>
-<tr>
-<td>complete</td>
-<td>完成后的回调函数</td>
-<td>function(){}</td>
-<td><code>complete:function(){}</code></td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    type:<span class="string">"get/post"</span>,<span class="comment">//请求类型</span></span><br><span class="line">  	url:<span class="string">'01.php'</span>,<span class="comment">//请求地址</span></span><br><span class="line">  	data:&#123;</span><br><span class="line">    name:<span class="string">'zs'</span>,</span><br><span class="line">  	age:<span class="number">18</span></span><br><span class="line">&#125;,<span class="comment">//请求数据</span></span><br><span class="line">  dataType:<span class="string">'text'</span>,</span><br><span class="line">  timeout:<span class="number">2000</span>,<span class="comment">//设置超时时间</span></span><br><span class="line">  beforeSend:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"发送前的数据"</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  success:<span class="function"><span class="keyword">function</span>(<span class="params">info</span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(info);</span><br><span class="line">  &#125;,</span><br><span class="line">  error:<span class="function"><span class="keyword">function</span>(<span class="params">error</span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(error);</span><br><span class="line">  &#125;,</span><br><span class="line">  complete:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"请求完成"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h1 id="怎么解决跨域问题"><a href="#怎么解决跨域问题" class="headerlink" title="怎么解决跨域问题"></a>怎么解决跨域问题</h1><p>在跨域的情况下，不能发送 ajax请求 （不能使用XMLHttpRequest 对象发送请求，会被浏览器限制）就算你将dataType 设置为jsonp，仍然不能使用XMLHttpRequest 对象发送请求，而是使用其他的方式来请求的服务器</p>
-<p>//这种方式 叫JSONP json with padding  用json 进行填充</p>
-<p>跨域的情况下 不能使用XMLHttpRequest 对象</p>
-<p>jsonp 的原理</p>
-<p>本质是上是使用了script标签上的src 属性请求的服务器</p>
+<p>zepto: 是jquery 的 阉割版 是为移动端开发的库 jQuery的轻量级替代品。文件大小比较小 只有8k左右 ,是目前功能库中最小的一个，尽管不大，zepto 所提供的工具足以满足开发程序的需要，大多数在jquery中常用的API和方法Zepto 都有，Zepto 和API大部分都能和jquery兼容 所以用起来和jquery差不多</p>
+<p>jQuery: 主要用于PC端的页面开发，jquery 是目前最流行的javascript 框架,它能兼容市面上主流的浏览器，插件也是相当的丰富，大小在90k左右</p>
+<p>Zepto: 特点 是为现代智能手机浏览器推出的javascript框架 有着jquery 相似的语法 但是和jquery相比它有很多优点 在大小方面 压缩后在5~10k 左右,功能很齐全，并且多出来了一些触摸屏的事件，然而它对一些老的浏览器不兼容 ，所以这个轻量级的js用它来开发手机端和IOS, Android 网页都是不错的选择，极大的减轻了整个app的负载。</p>
+<h2 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h2><p>​    1.zepto 是针对移动端的程序 zepto有一些基本的触摸事件可以来操作触摸屏的交互(tap事件、swipe事件) zepto 是不支持IE浏览器</p>
 <ol>
-<li><p>前端要准备好一个已经定义好的函数</p>
+<li><p>Dom 操作的区别 ：添加id时jquery 不会生效 而Zepto会生效</p>
 </li>
-<li><p>用script标签 把方法名字传递给后台</p>
+<li><p>触发事件的区别 ：使用jquery 是load 事件的处理函数不会执行，使用zepto时 load事件的处理函数会执行</p>
 </li>
-<li><p>后台向获取的方法名中 填充json数据，并且会返回 已经拼接好 数据的 方法调用say({“name”:”zs”})</p>
+<li><p>事件委托的区别：zepto中 选择器上所有的委托事件都会依次放入一个队列中，而在jquery中则委托成独立的多个事件</p>
 </li>
-<li><p>前端接受到后台返回的方法调用，会立即当做js执行 就会拿到数据</p>
-<ul>
-<li>jsonp的注意点</li>
-<li>jsonp 只能发送 GET请求</li>
-<li>jsonp 需要前后台配合完成</li>
-</ul>
-<h3 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h3><p>跨域能请求图片</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// 跨域请求图片</span><br><span class="line">&lt;img src=&quot;http://user.jpg&quot; alt=&quot;&quot;&gt;</span><br><span class="line">//跨域能请求js文件</span><br><span class="line">&lt;script src=&apos;http://www.test.com/cross/corss.js&apos;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--标签的src link属性 具备跨域请求资源的能力--&gt;</span><br><span class="line">&lt;!--src 可以跨域请求后台的处理程序--&gt;</span><br><span class="line">&lt;script src=&quot;http://www.test.com/cross/corss&quot;&gt;</span><br></pre></td></tr></table></figure>
-<p>​</p>
+<li><p>width()和height() 的区别：zepto 由盒子模型(box-sizing)决定，用 .width()返回赋值的width，用 .css(‘width’)返回border 等的结果</p>
+<p>而jquery会忽略盒子模型 ， 始终返回内容区域的宽/高（不包含padding 、border）</p>
+<ol>
+<li><p>offset()的区别：Zepto 返回{top、left、width、height}; jQuery返回{width,height}</p>
+</li>
+<li><p>Zepto 无法获取隐藏元素的宽高，jQuery可以</p>
+</li>
+<li><p>Zepto中没有为原型定义extend方法 而jQuery有</p>
+</li>
+<li><p>Zepto 的 each 方法只能遍历数组，不能遍历JSON对象</p>
+</li>
+</ol>
 </li>
 </ol>
 
@@ -491,7 +418,9 @@
           
             <a href="/tags/学习/" rel="tag"># 学习</a>
           
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
+            <a href="/tags/随笔/" rel="tag"># 随笔</a>
+          
+            <a href="/tags/jquery/" rel="tag"># jquery</a>
           
         </div>
       
@@ -504,8 +433,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/13/jquery和zepto的异同/" rel="next" title="jquery和zepto的异同">
-                <i class="fa fa-chevron-left"></i> jquery和zepto的异同
+              <a href="/2016/06/06/我的博客/" rel="next" title="我的博客">
+                <i class="fa fa-chevron-left"></i> 我的博客
               </a>
             
           </div>
@@ -513,6 +442,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/06/jquery中ajax请求/" rel="prev" title="jquery中的ajax 请求的步骤？怎么解决跨域">
+                jquery中的ajax 请求的步骤？怎么解决跨域 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -664,7 +597,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jquery-中ajax-请求的步骤"><span class="nav-number">1.</span> <span class="nav-text">jquery 中ajax 请求的步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX-技术"><span class="nav-number">1.1.</span> <span class="nav-text">AJAX 技术</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#怎么解决跨域问题"><span class="nav-number">2.</span> <span class="nav-text">怎么解决跨域问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#跨域"><span class="nav-number">2.0.1.</span> <span class="nav-text">跨域</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jquery和zepto的异同"><span class="nav-number">1.</span> <span class="nav-text">jquery和zepto的异同</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#相同点"><span class="nav-number">1.1.</span> <span class="nav-text">相同点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同点"><span class="nav-number">1.2.</span> <span class="nav-text">不同点</span></a></li></ol></li></ol></div>
             
 
           </div>
