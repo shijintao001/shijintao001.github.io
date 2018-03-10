@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Node介绍 node 是一个开发平台, 就像 Java 开发平台、.Net 开发平台、PHP 平台、Apple 开发平台一样。 何为开发平台? 有对应的编程语言、有语言运行时、有能实现特定功能的 API (例如: fs http path)   该平台使用的编程语言:javascript 语言. node.js 平台是基于谷歌 V8引擎构建的 基于 node.js 可以开发控制台程序（命令行程序">
+<meta name="keywords" content="学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node">
+<meta property="og:url" content="http://yoursite.com/2017/03/11/Node/index.html">
+<meta property="og:site_name" content="大石头">
+<meta property="og:description" content="Node介绍 node 是一个开发平台, 就像 Java 开发平台、.Net 开发平台、PHP 平台、Apple 开发平台一样。 何为开发平台? 有对应的编程语言、有语言运行时、有能实现特定功能的 API (例如: fs http path)   该平台使用的编程语言:javascript 语言. node.js 平台是基于谷歌 V8引擎构建的 基于 node.js 可以开发控制台程序（命令行程序">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-10T17:21:11.221Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node">
+<meta name="twitter:description" content="Node介绍 node 是一个开发平台, 就像 Java 开发平台、.Net 开发平台、PHP 平台、Apple 开发平台一样。 何为开发平台? 有对应的编程语言、有语言运行时、有能实现特定功能的 API (例如: fs http path)   该平台使用的编程语言:javascript 语言. node.js 平台是基于谷歌 V8引擎构建的 基于 node.js 可以开发控制台程序（命令行程序">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/11/Node/"/>
+
+
+
+
+
+  <title>Node | 大石头</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">大石头</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">滴水穿石，不是力量大，而是坚持！！！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/11/Node/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小石头">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/user.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大石头">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Node</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-11T10:05:24+08:00">
+                2017-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Node介绍"><a href="#Node介绍" class="headerlink" title="Node介绍"></a>Node介绍</h1><ol>
+<li>node 是一个开发平台, 就像 Java 开发平台、.Net 开发平台、PHP 平台、Apple 开发平台一样。<ul>
+<li>何为<strong>开发平台?</strong> 有对应的编程语言、有语言运行时、有能实现特定功能的 API (例如: fs http path)</li>
+</ul>
+</li>
+<li>该平台使用的编程语言:javascript 语言.</li>
+<li>node.js 平台是基于谷歌 V8引擎构建的</li>
+<li>基于 node.js 可以开发控制台程序（命令行程序）、桌面应用程序（借助 electron 、node-webkit等框架实现）、Web 应用程序（网站）</li>
+</ol>
+<p>#Node的特点</p>
+<ol>
+<li><p>事件驱动（事件触发，会执行回调函数里面的代码）</p>
+<ul>
+<li>js也是事件驱动，鼠标放置，点击，触发不同的事件执行对应的代码</li>
+<li>onclick = function(){}</li>
+<li>node.js 是传一个回调函数</li>
+</ul>
+<p>2.非阻塞（I/O）</p>
+<ul>
+<li>I/O就是输入输出的操作</li>
+<li>读写I/O+网络I/O</li>
+<li>nodejs 的I/O 不会阻塞程序</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入模块</span></span><br><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">111</span>);</span><br><span class="line"></span><br><span class="line">fs.readFile(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data,<span class="number">222</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">333</span>);</span><br></pre></td></tr></table></figure>
+<p>​    </p>
+<ul>
+<li>不会阻塞我们主程序的运行</li>
+</ul>
+<ol>
+<li>单线程;</li>
+</ol>
+<ul>
+<li>首先我们 js 就是单线程的语言, node基于 js 也是单线程;</li>
+<li>减少内存开销 (线程/2M)</li>
+</ul>
+<ol>
+<li>拥有世界最大的开源生态系统– npm</li>
+</ol>
+<ul>
+<li>npm - 开源库托管网站! 官网</li>
+<li>我们 node是一个开发平台有 实现特定功能的 api, 但是内置的 api 是有限的,,想要实现 node.js 自己实现不了的功能怎么办 ?? 就去找 npm,,</li>
+<li>只要是我们想到的功能,都已经有人帮我们已经写好了,就在 npm 这个代码仓库里,,,</li>
+<li>npm 这个丰富的开源系统,,而且也很开放, 也都会写模块,,然后把代码上传到 npm 上,供大家使用</li>
+<li>就像 jquery 一样,很多人都给它写插件啊,,给她拓展功能啊,</li>
+<li>我们 node.js 也是,,,, npm 里面帮我们node拓展了各种各样的功能包</li>
+</ul>
+<p>#Node 创建 文件名命名常用规范</p>
+<ul>
+<li>不要用中文  (特别里面是使用 npm 安装包的时候: npm init -y)</li>
+<li>不要包含空格 </li>
+<li>demo里可以   项目总切记不要</li>
+<li>不要出现node关键字 </li>
+<li>建议以 ‘ - ‘   分割单词 (例如: child-demo.js )</li>
+</ul>
+<h1 id="Node-编写代码常用规范"><a href="#Node-编写代码常用规范" class="headerlink" title="Node 编写代码常用规范"></a>Node 编写代码常用规范</h1><ul>
+<li>命名: 变量名和函数名命名,按照驼峰命名 ——   var userName = ‘123’</li>
+<li>优先使用 const(常量) 和 let (变量)</li>
+<li>引入: 引入模块时,变量名最好和模块名一样: <code>var fs = require(&#39;fs&#39;)</code>;</li>
+<li>尽量使用单引号 ,,  json数据里使用双引号</li>
+<li>动态字符串使用 反引号 :<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`你好啊 <span class="subst">$&#123;name&#125;</span>`</span> <span class="string">''</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>空格: 操作符前后需要加空格,  比如 + - * / =    <code>var foo = &#39;bar&#39; + &#39;baz&#39;</code></li>
+<li>分号: 表达式结尾添加分号,,,虽然编译器自动会给我们,可能会带来一些错误! </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> y = <span class="number">2</span>;</span><br><span class="line">x=y</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">  <span class="built_in">console</span>.log(x);</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line">...........................</span><br><span class="line"><span class="comment">//执行时会误以为是:</span></span><br><span class="line">x=y(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 到时候会报错: y is  not a function</span></span><br></pre></td></tr></table></figure>
+<h3 id="案例-1-编写-Hello-world-在-node-环境下执行"><a href="#案例-1-编写-Hello-world-在-node-环境下执行" class="headerlink" title="案例 1. 编写 Hello world 在 node 环境下执行"></a>案例 1. 编写 Hello world 在 node 环境下执行</h3><ol>
+<li>创建 <code>hello-world.js</code>文件</li>
+<li>编写: <code>console.log(&#39;hello world&#39;)</code></li>
+<li>终端打开: <code>node hello-world.js</code>  运行即可 (在 node环境下运行)</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">注意<span class="number">1</span>: node + 文件名 / 路径 </span><br><span class="line">注意<span class="number">2</span>: 文件名和路径不要手写,容易写错,,tab </span><br><span class="line">注意<span class="number">3</span>: 确保当前路径没有错</span><br><span class="line">注意<span class="number">4</span>: 终端命令介绍: cd/pwd/ls/ctr+c</span><br></pre></td></tr></table></figure>
+<p>###案例 2: 文件读写案例 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 写入文件  write file</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">//1. 引入 fs 模块</span></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 写入文件</span></span><br><span class="line"><span class="comment">// fs.writeFile(file, data[,options], callback)</span></span><br><span class="line"><span class="comment">// 异步写入数据到文件</span></span><br><span class="line"><span class="comment">// 参数1: 文件要写入到哪里</span></span><br><span class="line"><span class="comment">// 参数2: 要写入的数据</span></span><br><span class="line"><span class="comment">// 参数3: 编码  默认: utf8   可选</span></span><br><span class="line"><span class="comment">// 参数4: 回调  回调参数: err  </span></span><br><span class="line"><span class="keyword">var</span> msg = <span class="string">'..: 第一美女助教11'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">111</span>)</span><br><span class="line">fs.writeFile(<span class="string">'./data.txt'</span>,msg,<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 如果有错,,抛错</span></span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="keyword">throw</span> err;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'写入成功'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">222</span>)</span><br><span class="line"><span class="comment">// 注意:</span></span><br><span class="line"><span class="comment">//1. 如果文件存在会覆盖</span></span><br><span class="line"><span class="comment">//2. 该操作是异步操作 </span></span><br><span class="line"><span class="comment">// (遇到异步的操作,先执行后面的代码,等异步回调回来再执行回调的内容)</span></span><br><span class="line"><span class="comment">//3. 默认写入的文件编码: 为 utf8 可选  一般不写</span></span><br><span class="line"><span class="comment">//4. 在回调里面,判断是否有错,,有错就抛出异常 throw err</span></span><br></pre></td></tr></table></figure>
+<h1 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h1><ol>
+<li><p><strong>读取文件</strong> :  <code>fs.readFile(file, [, options], callback);</code></p>
+<p><strong>常用</strong>: <code>fs.readFile ( where , encoding , callback )</code></p>
+</li>
+</ol>
+<ul>
+<li>参数1: 从哪里读取数据?   <strong>必填</strong></li>
+<li>参数2: 以什么格式读取出来 ?   </li>
+<li>参数3: 读取完毕后的回调函数,   <strong>必填</strong></li>
+<li>读取文件注意: <ul>
+<li>该操作也是 异步操作;</li>
+<li>回调函数有2个参数:  <code>err</code> 和 <code>data</code></li>
+<li>如果读取文件时没有指定编码，那么返回的将是原生的二进制数据<buffer>；如果指定了编码，那么会根据指定的编码返回对应的字符串数据。</buffer></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 问题1:</span></span><br><span class="line">  <span class="comment">// &lt;Buffer e6 9c 89 e6 b2 a1 e6 9c 89 e8 be a3 e4 </span></span><br><span class="line">  <span class="comment">// b9 88 e4 b8 80 e9 a6 96 e6 ad 8c 2c e8 ae a9 e4 bd a</span></span><br><span class="line">  <span class="comment">// 0 e6 83 b3 e8 b5 b7e6 88 91 3f 3f&gt;</span></span><br><span class="line">  <span class="comment">// Buffer 是一个缓冲 是一个字节数组  就是一种二进制数据 负责传输数据和文件</span></span><br><span class="line">  <span class="comment">//1. Buffer 是什么 ? 是一个缓冲,,是一个二进制数据流格式</span></span><br><span class="line">  <span class="comment">//   是发送或者接收文件传输过程中的格式</span></span><br><span class="line">  <span class="comment">//2. 它类似于一个数组 每个元素是 2位十六进制的字节  字节数组</span></span><br><span class="line">  <span class="comment">//3. 一个汉字三个字节</span></span><br><span class="line">  <span class="comment">// 是我们想要的格式吗??</span></span><br><span class="line">  <span class="comment">// 我们想要一个字符串 </span></span><br><span class="line">  <span class="comment">// 只要通过 toString() 就可以了  其实内部已经给我们转化为了 utf8格式</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//问题2: ENOENT E: error NO :no  ENT entity: 实体 没有这个文件或者文件夹</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//问题3: 显示第二个参数 :'utf8' 也是可以的</span></span><br></pre></td></tr></table></figure>
+<h2 id="同步读取文件"><a href="#同步读取文件" class="headerlink" title="同步读取文件"></a>同步读取文件</h2><ol>
+<li>方法: <code>fs.readFileSync(path[, options])</code></li>
+<li>返回值 接收数据</li>
+<li>// fs.readFileSync(path[, options])<br>// 参数1: 从哪里读取文件<br>// 参数2: 编码  (可选)</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(哈哈)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> data = fs.readFileSync(<span class="string">'./data1.txt'</span>,<span class="string">'utf8'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(data)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(打印不出)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 总结:</span></span><br><span class="line"><span class="comment">//1. 该操作是同步的 </span></span><br><span class="line"><span class="comment">//2. 异步捕捉异常: throw err</span></span><br><span class="line"><span class="comment">// 同步 : 能不能不捕捉异常</span></span><br><span class="line"><span class="comment">// 同步,一旦出错,,后面的所有代码都不执行,,体验很不好,,必须要有捕捉</span></span><br><span class="line"><span class="comment">//3. 怎么捕捉呢?</span></span><br><span class="line"><span class="comment">// try ...catch()</span></span><br></pre></td></tr></table></figure>
+<h3 id="try…catch-捕获异常-抛出错误"><a href="#try…catch-捕获异常-抛出错误" class="headerlink" title="try…catch   (捕获异常 , 抛出错误)"></a>try…catch   (捕获异常 , 抛出错误)</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 一旦出错,后面的代码不执行了..</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">111</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">var</span> data = fs.readFileSync(<span class="string">'./abcd.txt'</span>,<span class="string">'utf8'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(data)</span><br><span class="line"></span><br><span class="line">&#125;<span class="keyword">catch</span>(err)&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// throw err</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'读取时:'</span>+err)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">222</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="异步读文件"><a href="#异步读文件" class="headerlink" title="异步读文件"></a>异步读文件</h2><p>###throw errr (捕获异常 , 抛出错误)</p>
+<h2 id="问题-同步没有-err-能不能不捕获异常了"><a href="#问题-同步没有-err-能不能不捕获异常了" class="headerlink" title="问题: 同步没有 err ,  能不能不捕获异常了???"></a>问题: 同步没有 err ,  能不能不捕获异常了???</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">no</span><br><span class="line">后面的会崩溃,不会执行</span><br></pre></td></tr></table></figure>
+<ol>
+<li>同步: try catch</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">异步不能使用 try..catch 因为不管正确和错误都会走回调</span><br></pre></td></tr></table></figure>
+<h1 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h1><ol>
+<li>__dirname</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 加载 fs 模块</span></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>) <span class="comment">//  path 模块 负责处理路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 读取文件 </span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// ('./data.txt')</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(__dirname);</span><br><span class="line"><span class="comment">///Users/MaWenxing/Desktop/14期讲课/day01/4-源代码/day01_14/04-__dirname</span></span><br><span class="line"><span class="comment">///Users/MaWenxing/Desktop/14期讲课/day01/4-源代码/day01_14/04-__dirname</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 后面的路径,,我能获取到,如果我们也能自动获取前面的就好了?</span></span><br><span class="line"><span class="comment">// 巧了,,,,唉,,巧了,,,,正好有一个熟悉,,__dirname</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 当前 js 的文件夹路径   js 的相对文件路径</span></span><br><span class="line"><span class="comment">// /Users/MaWenxing/Desktop/14期讲课/day01/4-源代码/day01_14/04-__dirname   /data.txt</span></span><br><span class="line"><span class="comment">// var file = '/Users/MaWenxing/Desktop/14期讲课/day01/4-源代码/day01_14/04-__dirname/data.txt'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// /data.txt  ./data.txt  data.txt</span></span><br><span class="line"><span class="comment">// var  file = __dirname + '/data.txt'</span></span><br><span class="line"><span class="comment">// var file = path.join(__dirname,'./data.txt')</span></span><br><span class="line">fs.readFile(path.join(__dirname,<span class="string">'./data.txt'</span>),<span class="string">'utf8'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">err,data</span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      <span class="keyword">throw</span> err</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">     <span class="built_in">console</span>.log(data)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 报错的原因:  path 路径是相对于 `执行 node 命令所在的目录`</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// __dirname :  获取当前 js 所在的`文件夹`目录</span></span><br><span class="line">  <span class="comment">//  因为怕误写  ./data.txt  /data.txt  data.txt  --&gt; path.join</span></span><br><span class="line">  <span class="comment">// </span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 总结: </span></span><br><span class="line">  <span class="comment">// 以后遇到这种文件路径的: 全部使用   path.join(__dirname,'./....')</span></span><br></pre></td></tr></table></figure>
+<h1 id="通过-node-js-编写-http-服务程序-极简版本"><a href="#通过-node-js-编写-http-服务程序-极简版本" class="headerlink" title="通过 node.js 编写 http 服务程序 - 极简版本"></a>通过 node.js 编写 http 服务程序 - 极简版本</h1><ul>
+<li><p>步骤</p>
+<ol>
+<li><p>加载 http 模块;</p>
+</li>
+<li><p>创建 http 服务;</p>
+</li>
+<li><p>监听 request 事件 —— 为 http 服务对象添加 request 事件处理程序;</p>
+</li>
+<li><p>启动服务,开始监听 —— 开启 http 服务监听,准备接收客户端请求;</p>
+<p>*注意</p>
+<ol>
+<li><p>浏览器可能是乱码, 需要设置 浏览器显示时所使用的编码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/plain ; charset=utf-8'</span>);  <span class="comment">// 注意 后面的分号 和引号的位置</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>演示一下设置<code>Content-Type=text/html</code> 和 <code>Content-Type=text/plain</code>的区别。</li>
+<li>request  对象 包含了用户请求报文中的所有内容,通过 request 对象可以获取所有用户提交过来的数据;</li>
+<li>response  对象用来向用户响应一些数据,当服务器要向浏览器响应数据的时候必须使用 response 对象</li>
+<li>有了 request 对象和 response 对象,就既可以获取用户提交的数据,也可以向用户响应数据了</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 加载 http 模块</span></span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 创建 http 服务</span></span><br><span class="line"><span class="keyword">var</span> server =  http.createServer();</span><br><span class="line"></span><br><span class="line"><span class="comment">//3. 监听 request 事件</span></span><br><span class="line"><span class="comment">// 参数1: 请求体 request -&gt; req</span></span><br><span class="line"><span class="comment">// 参数2: 响应体 response -&gt; res</span></span><br><span class="line">server.on(<span class="string">'request'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'有人请求了'</span>) <span class="comment">// 会打印两次,一次是请求 ico 图标  (忽略)</span></span><br><span class="line">  res.write(<span class="string">'hello world 哈哈哈'</span>); <span class="comment">//2</span></span><br><span class="line">  res.end();  <span class="comment">//1. </span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//4. 启动服务,开始监听</span></span><br><span class="line"><span class="comment">// 参数1: 指定一个端口  如果冲突了,再换一个</span></span><br><span class="line"><span class="comment">// 参数2: 回调</span></span><br><span class="line">server.listen(<span class="number">9000</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">'服务已经启动,请访问: http://127.0.0.1:9000'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="简化-创建、开启、监听-一步走"><a href="#简化-创建、开启、监听-一步走" class="headerlink" title="简化: 创建、开启、监听 一步走"></a>简化: 创建、开启、监听 一步走</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2. 创建 开启 监听</span></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">   </span><br><span class="line">  res.end(<span class="string">'hello world'</span>)  </span><br><span class="line">&#125;).listen(<span class="number">8080</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'服务器已经开启了'</span>)  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="text-plain-和-text-html-的区别"><a href="#text-plain-和-text-html-的区别" class="headerlink" title="text/plain 和 text/html 的区别"></a>text/plain 和 text/html 的区别</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">response.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/plain ; charset=utf-8'</span>);  <span class="comment">// 注意 后面的分号 和引号的位置</span></span><br><span class="line"> text/plain :  告诉浏览器发送的数据是 <span class="string">`纯文本`</span>类型,,让浏览器以<span class="string">`纯文本`</span>的格式进行解析</span><br><span class="line"> text/html  :  告诉浏览器发送的数据是 <span class="string">`html`</span> 类型,,...........html.......</span><br><span class="line"> </span><br><span class="line"> res.end(<span class="string">'hello &lt;h1&gt;world&lt;/h1&gt;  哈哈'</span>)  <span class="comment">//不能直接写 `&lt;h1&gt;`因为浏览器会自动识别</span></span><br></pre></td></tr></table></figure>
+<h3 id="编写-http-服务程序-—-根据-不同的路径-url-请求-响应不同的-纯文本"><a href="#编写-http-服务程序-—-根据-不同的路径-url-请求-响应不同的-纯文本" class="headerlink" title="编写 http 服务程序 — 根据 不同的路径 url 请求 响应不同的 :  纯文本"></a>编写 http 服务程序 — 根据 不同的路径 url 请求 响应不同的 :  纯文本</h3><p><strong>注意:</strong></p>
+<ul>
+<li><p>根据 <code>req.url</code>的不同来判断  (例如: /abc  /index )</p>
+</li>
+<li><p>别忘了 <code>404</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *  编写 http 服务程序 — 根据 不同的 url 请求 响应不同的 :  纯文本 </span></span><br><span class="line"><span class="comment"> *  1. 编写 http 服务程序</span></span><br><span class="line"><span class="comment"> *  2. 获取不同的 url </span></span><br><span class="line"><span class="comment"> *  3. 响应不同的纯文本</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">//1. 加载 http 模块</span></span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 创建.开启.监听</span></span><br><span class="line"> http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置文件类型 和 编码格式</span></span><br><span class="line">    res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/plain;charset=utf-8'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(req.url);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// / index  --&gt; hello index</span></span><br><span class="line">    <span class="comment">// /login  --&gt; hello login</span></span><br><span class="line">    <span class="comment">// /register  --&gt; hello register</span></span><br><span class="line">    <span class="comment">// /list  --&gt; hello list</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (req.url==<span class="string">'/'</span> || req.url == <span class="string">'/index'</span>) &#123;</span><br><span class="line">      </span><br><span class="line">      res.end(<span class="string">'hello index'</span>)</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(req.url==<span class="string">'/login'</span>) &#123;</span><br><span class="line">      </span><br><span class="line">      res.end(<span class="string">'hello login'</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(req.url==<span class="string">'/register'</span>) &#123;</span><br><span class="line">      </span><br><span class="line">      res.end(<span class="string">'hello register'</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(req.url==<span class="string">'/list'</span>) &#123;</span><br><span class="line">      </span><br><span class="line">      res.end(<span class="string">'hello list'</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line"></span><br><span class="line">      res.end(<span class="string">'hello 404 page not found'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">&#125;).listen(<span class="number">8080</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'服务开启了'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>​</p>
+<p>​</p>
+</li>
+</ul>
+<h2 id="Common-System-Errors-常见错误号"><a href="#Common-System-Errors-常见错误号" class="headerlink" title="Common System Errors - 常见错误号"></a>Common System Errors - 常见错误号</h2><ul>
+<li>EACCESS (Permission denied)<ul>
+<li>An attempt was made to access a file in a way forbidden by its file access permissions.</li>
+<li>访问被拒绝</li>
+</ul>
+</li>
+<li>EADDRINUSE (Address already in use) <ul>
+<li>An attempt to bind a server (net, http, or https) to a local address failed due to another server on the local system already occupying that address.</li>
+<li>地址正在被使用（比如：端口号占用）</li>
+</ul>
+</li>
+<li>EEXIST (File exists)<ul>
+<li>An existing file was the target of an operation that required that the target not exist.</li>
+<li>文件已经存在</li>
+</ul>
+</li>
+<li>EISDIR (Is a directory)<ul>
+<li>An operation expected a file, but the given pathname was a directory.</li>
+<li>给定的路径是目录</li>
+</ul>
+</li>
+<li>ENOENT (No such file or directory)<ul>
+<li>Commonly raised by fs operations to indicate that a component of the specified pathname does not exist – no entity (file or directory) could be found by the given path.</li>
+<li>文件 或 目录不存在</li>
+</ul>
+</li>
+<li>ENOTDIR (Not a directory)<ul>
+<li>A component of the given pathname existed, but was not a directory as expected. Commonly raised by fs.readdir.</li>
+<li>给定的路径不是目录</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！谢谢！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="小石头 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="小石头 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习/" rel="tag"># 学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/09/this使用/" rel="next" title="this使用">
+                <i class="fa fa-chevron-left"></i> this使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/user.jpg"
+                alt="小石头" />
+            
+              <p class="site-author-name" itemprop="name">小石头</p>
+              <p class="site-description motion-element" itemprop="description">在牛逼的梦想，也抵不过你傻逼的坚持！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shijintao001" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:773265313@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.shi1991.com" target="_blank" title="个人网站">
+                      
+                        <i class="fa fa-fw fa-user"></i>个人网站</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Node介绍"><span class="nav-number">1.</span> <span class="nav-text">Node介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Node-编写代码常用规范"><span class="nav-number">2.</span> <span class="nav-text">Node 编写代码常用规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#案例-1-编写-Hello-world-在-node-环境下执行"><span class="nav-number">2.0.1.</span> <span class="nav-text">案例 1. 编写 Hello world 在 node 环境下执行</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#读取文件"><span class="nav-number">3.</span> <span class="nav-text">读取文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#同步读取文件"><span class="nav-number">3.1.</span> <span class="nav-text">同步读取文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#try…catch-捕获异常-抛出错误"><span class="nav-number">3.1.1.</span> <span class="nav-text">try…catch   (捕获异常 , 抛出错误)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异步读文件"><span class="nav-number">3.2.</span> <span class="nav-text">异步读文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题-同步没有-err-能不能不捕获异常了"><span class="nav-number">3.3.</span> <span class="nav-text">问题: 同步没有 err ,  能不能不捕获异常了???</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路径"><span class="nav-number">4.</span> <span class="nav-text">路径</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过-node-js-编写-http-服务程序-极简版本"><span class="nav-number">5.</span> <span class="nav-text">通过 node.js 编写 http 服务程序 - 极简版本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简化-创建、开启、监听-一步走"><span class="nav-number">5.0.1.</span> <span class="nav-text">简化: 创建、开启、监听 一步走</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#text-plain-和-text-html-的区别"><span class="nav-number">5.0.2.</span> <span class="nav-text">text/plain 和 text/html 的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写-http-服务程序-—-根据-不同的路径-url-请求-响应不同的-纯文本"><span class="nav-number">5.0.3.</span> <span class="nav-text">编写 http 服务程序 — 根据 不同的路径 url 请求 响应不同的 :  纯文本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Common-System-Errors-常见错误号"><span class="nav-number">5.1.</span> <span class="nav-text">Common System Errors - 常见错误号</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小石头</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
