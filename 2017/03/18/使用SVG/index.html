@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="什么是SVG?SVG(Scalable Vector Graphics 可缩放矢量图标)是一种XML应用，简约而不简单呐，可以以一种简洁、可移植的形式表示图形信息，具有强大的矢量图形绘制及动态交互功能，并提供丰富的视觉效果。目前，在网页设计中出现越来越多的SVG图形，大多数现代浏览器都能显示SVG图形，并且大多数矢量绘图软件都能导出SVG图形。 SVG基础​    SVG是一种专门为网络而设计的基">
+<meta name="keywords" content="学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用SVG">
+<meta property="og:url" content="http://yoursite.com/2017/03/18/使用SVG/index.html">
+<meta property="og:site_name" content="大石头">
+<meta property="og:description" content="什么是SVG?SVG(Scalable Vector Graphics 可缩放矢量图标)是一种XML应用，简约而不简单呐，可以以一种简洁、可移植的形式表示图形信息，具有强大的矢量图形绘制及动态交互功能，并提供丰富的视觉效果。目前，在网页设计中出现越来越多的SVG图形，大多数现代浏览器都能显示SVG图形，并且大多数矢量绘图软件都能导出SVG图形。 SVG基础​    SVG是一种专门为网络而设计的基">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-17T18:38:29.909Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用SVG">
+<meta name="twitter:description" content="什么是SVG?SVG(Scalable Vector Graphics 可缩放矢量图标)是一种XML应用，简约而不简单呐，可以以一种简洁、可移植的形式表示图形信息，具有强大的矢量图形绘制及动态交互功能，并提供丰富的视觉效果。目前，在网页设计中出现越来越多的SVG图形，大多数现代浏览器都能显示SVG图形，并且大多数矢量绘图软件都能导出SVG图形。 SVG基础​    SVG是一种专门为网络而设计的基">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/18/使用SVG/"/>
+
+
+
+
+
+  <title>使用SVG | 大石头</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">大石头</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">滴水穿石，不是力量大，而是坚持！！！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/18/使用SVG/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小石头">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/user.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大石头">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">使用SVG</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-18T22:10:10+08:00">
+                2017-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html/" itemprop="url" rel="index">
+                    <span itemprop="name">html</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="什么是SVG"><a href="#什么是SVG" class="headerlink" title="什么是SVG?"></a>什么是SVG?</h1><pre><code>SVG(Scalable Vector Graphics 可缩放矢量图标)是一种XML应用，简约而不简单呐，可以以一种简洁、可移植的形式表示图形信息，具有强大的矢量图形绘制及动态交互功能，并提供丰富的视觉效果。目前，在网页设计中出现越来越多的SVG图形，大多数现代浏览器都能显示SVG图形，并且大多数矢量绘图软件都能导出SVG图形。
+</code></pre><h1 id="SVG基础"><a href="#SVG基础" class="headerlink" title="SVG基础"></a>SVG基础</h1><p>​    SVG是一种专门为网络而设计的基于文本的图像格式，与XML高度兼容，且开放标准，所以可拓展性很强，能够描述任何复杂的图像</p>
+<h2 id="SVG发展历史"><a href="#SVG发展历史" class="headerlink" title="SVG发展历史"></a>SVG发展历史</h2><p>1998年 W3C收到两个关于新的图形格式的提案：PGML和VML 。虽然PGML 和 VML 都是基于CSS的XML标记语言，但是二者却是竞争对手。</p>
+<p>​    为了更好的促进XML矢量图形的发展，W3C决定在融合两者优点的基础上，开发一种新的语言SVG。 W3C期望SVG这种基于开放标准的可扩展语言能够满足Web开发者对动态、可缩放和平台无关的Web内容表现和交互手段日益增长的需求。</p>
+<h2 id="SVG特点"><a href="#SVG特点" class="headerlink" title="SVG特点"></a>SVG特点</h2><ol>
+<li><p>超强的交互性</p>
+<p>​    SVG能够轻易地制作强大的动态交互。利用设计完善的DOM接口进行编程，动态的生成包含SVG图形的Web页面，能对用户操作做出不同的响应。例如：高亮、声效、特效等体现了网络交互的本质。</p>
+</li>
+<li><p>文本独立性</p>
+<p>​    SVG图像中的文字独立于图像，文字标注也可被动态的移动和缩放，方便用户对SVG图像内的文字进行基于图形的查询，图像中的文字被搜索引擎作为关键字搜索已经不再是梦想。</p>
+</li>
+<li><p>高品质矢量图</p>
+<p>​    SVG图像的清晰度适合任何屏幕分辨率或打印分辨率。用户可以自由的缩放图像而不会破坏图像的清晰度，这对于查看某些图像细节的应用非常有用。</p>
+</li>
+<li><p>超强颜色控制</p>
+<p>​    SVG具有一个1600万色彩的调色板，支持ICC标准、RGB、线性填充和遮罩。</p>
+</li>
+<li><p>基于XML</p>
+<p>​    通过XML来表达信息、传递数据、不仅跨越平台、还跨越空间，更跨越设备。</p>
+</li>
+</ol>
+<p>##在XTML中应用SVG</p>
+<p>​    SVG 文件可以通过一下元素嵌入XTML文档 <code>&lt;embed&gt;</code> <code>&lt;object&gt;</code> <code>&lt;iframe&gt;</code>。SVG代码也可以直接嵌入到XTML页面中，或者直接连接到SVG文件。</p>
+<ol>
+<li>使用<code>&lt;embed&gt;</code>元素<ul>
+<li>优点：所有主要浏览器都支持，并允许使用脚本。</li>
+<li>缺点：不推荐在HTML4和XHTML中使用，但在HTML5中允许</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">具体用法：</span><br><span class="line"></span><br><span class="line">​```html</span><br><span class="line">&lt;embed src=&quot;test.svg&quot; type = &quot;image/svg+xml&quot;&gt;;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>使用<code>&lt;object&gt;</code>元素</p>
+<ul>
+<li>优点：所有主要浏览器都支持，并支持HTML4和XHTML和HTML5标准。</li>
+<li>不允许使用脚本</li>
+</ul>
+<p>具体使用：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">object</span> <span class="attr">data</span> = <span class="string">"test.svg"</span> <span class="attr">type</span> = <span class="string">"image/svg+xml"</span>&gt;</span> <span class="tag">&lt;/<span class="name">object</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>&lt;iframe&gt;</code>元素</p>
+<ul>
+<li><p>优点:所有主要浏览器都支持 并允许使用脚本</p>
+</li>
+<li><p>缺点：不推荐在HTML4和XHTML中使用，但在HTML5中允许</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>具体语法：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span> = <span class="string">"test.svg"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>直接在HTML嵌入SVG代码<br>在Firefox 、IE9+、Chrome和Safari中，可以直接在HTML嵌入SVG代码。但SVG不能直接嵌入到Opera。</p>
+<p>【示例】下面是一个简单示例</p>
+<p>​</p>
+</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">svg</span> <span class="attr">xmlns</span> = <span class="string">"http://www.w3.org/2000/svg"</span> <span class="attr">version</span> = <span class="string">"1.1"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span> = <span class="string">"100"</span> <span class="attr">cy</span> = <span class="string">"50"</span> <span class="attr">r</span> = <span class="string">"40"</span> <span class="attr">stroke</span> = <span class="string">"black"</span> <span class="attr">stroke-width</span> = <span class="string">"2"</span> <span class="attr">fill</span> = <span class="string">"red"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>连接到SVG文件</p>
+<p>​    可以使用<code>&lt;a&gt;</code>元素连接到一个SVG文件</p>
+<p>例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span> = <span class="string">"test.svg"</span>&gt;</span>View SVG file <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
+<h1 id="使用SVG"><a href="#使用SVG" class="headerlink" title="使用SVG"></a>使用SVG</h1><p>​    SVG预定义很多元素，用来绘制各种图形。SVG元素是一组事先定义好的如何绘制图像的指令集，由解析器负责解析，并把SVG图像在指定设备上渲染出来，使用SVG可以在页面上显示出各种高质量的矢量图形，支持很多常见的图形图像功能，如几何图形变换、动画效果、渐变色、滤镜效果、嵌入字体和透明效果等。</p>
+<ol>
+<li><p>矩形</p>
+<p>​    使用<code>&lt;rect&gt;</code>元素可以创建矩形，以及矩形的变种，包含属性说明如下</p>
+<ul>
+<li><p>x：矩形的左上角的x轴。</p>
+</li>
+<li><p>y:   矩形的左上角的x轴。</p>
+</li>
+<li><p>rx:  x轴的半径（round元素）。</p>
+</li>
+<li><p>ry:  y轴的半径（round元素）。</p>
+</li>
+<li><p>width: 矩形的宽度。必需的。</p>
+</li>
+<li><p>height： 矩形的高度，必需的。</p>
+<p>显现属性包括:Color、FillStroke、Graphics</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>使用<code>&lt;rect&gt;</code>元素绘制一个矩形<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">svg</span> <span class="attr">xmlns</span> =<span class="string">"http://www.w3.org/2000/svg"</span> <span class="attr">version</span> = <span class="string">"1.1"</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">rect</span> <span class="attr">width</span> = <span class="string">"300"</span> <span class="attr">height</span> = <span class="string">"100"</span> </span></span><br><span class="line"><span class="tag">          <span class="attr">style</span> = <span class="string">"fill:rgb(0,0,255); stroke-width:1; stroke:rgb(0,0,0)"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">--</span> <span class="attr">fill</span> 属性 定义矩形的填充颜色 取值可以是<span class="attr">rgb</span> 颜色名 或者十六进制</span></span><br><span class="line"><span class="tag">    <span class="attr">stroke-width</span> 属性定义矩形边框的宽度 </span></span><br><span class="line"><span class="tag">    <span class="attr">stroke</span> 属性定义矩形边框的颜色</span></span><br><span class="line"><span class="tag">    <span class="attr">--</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>下面包含一些新的绘图属性 ：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">xmlns</span> =<span class="string">"http://www.w3.org/2000/svg"</span> <span class="attr">version</span> = <span class="string">"1.1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">rect</span> <span class="attr">x</span>=<span class="string">"50"</span> <span class="attr">y</span>=<span class="string">"20"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">width</span> = <span class="string">"300"</span> <span class="attr">height</span> = <span class="string">"150"</span> </span></span><br><span class="line"><span class="tag">          <span class="attr">style</span> = <span class="string">"fill:blue; stroke-width:5; stroke:pink;fill-opacity:0.1;stroke-opacity:0.9  "</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="SVG滤镜"><a href="#SVG滤镜" class="headerlink" title="SVG滤镜"></a>SVG滤镜</h1><p>SVG滤镜用来增加对SVG图形的特殊效果。SVG可用的滤镜说明如下</p>
+<ul>
+<li><p>feBlend:把两个输入对象组合在一起，使他们受特定的混合模式控制。类似于图像编辑软件中混合两个图层。该模式由属性mode定义</p>
+</li>
+<li><p>feColorMatrix：基于转换矩阵对颜色进行变换。每一像素的颜色值(一个表示为红，绿、蓝，透明度的矢量)都经过矩阵乘法计算出的新颜色</p>
+</li>
+<li><p>feComponentTransfer: 对每个像素执行颜色分量的数据重映射。它允许进行图像的亮度调整，对比度调整，色彩平衡或阈（yu）值的操作</p>
+</li>
+<li><p>feComposite:执行两个输入图像的智能像素组合，在图像空间中使用over、in、atop、xor合成操作之一。另外，还可以应用一个智能组建arithmetic操作（结果被压到[0,1]范围内）</p>
+</li>
+<li><p>feConvolveMatrix：应用一个矩阵卷积滤镜效果。一个卷积在输入图像中把像素与邻近像素组合起来制作出结果图像。通过卷积可以实现各种成像操作，如模糊、边缘检测、锐化、压花和斜角。</p>
+</li>
+<li><p>feDiffuseLighting：光照一个图像，使用alpha通道作为隆起映射。结果图像是一个RGBA不透明图像，取决于光的颜色、光的位置以及输入隆起映射的表面几何形状。</p>
+</li>
+<li><p>feDisplacementMap：映射置换滤镜，该滤镜用来自图像中从in2到空间的像素值置换图像从in到空间的像素值</p>
+</li>
+<li><p>feDistantLight：该滤镜定义了一个距离光源，用于照明过滤，可以在灯光滤镜<code>&lt;feDuffuse-Lighting&gt;</code>元素或<code>&lt;feSpecularLihting&gt;</code>元素的内部</p>
+</li>
+<li><p>feFlood：该滤镜用flood-color元素定义的颜色和flood-opacity元素定义的不透明毒填充滤镜 子区域</p>
+</li>
+<li><p>feFuncA：该滤镜为它的父<code>&lt;feComponentTransfer&gt;</code>元素的输入图形的alpha成分定义了变换函数</p>
+</li>
+<li><p>feFuncB:该滤镜为它的父<code>&lt;feComponentTransfer&gt;</code>元素的输入图形的蓝色成分定义了变换函数</p>
+</li>
+<li><p>feFuncG:该滤镜为它的父<code>&lt;feComponentTransfer&gt;</code>元素的输入图形的绿色成分定义了变换函数</p>
+</li>
+<li><p>feFuncR:该滤镜为它的父<code>&lt;feComponentTransfer&gt;</code>元素的输入图形的红色成分定义了变换函数</p>
+</li>
+<li><p>feGaussianBlur：该滤镜对输入图像惊醒高斯模糊，属性stdDeviation中指定的数量定义了钟形</p>
+</li>
+<li><p>feImage：feImage滤镜从外部来源取得图像数据，并提供像素数据作为输出，意味着如果外部来源是一个SVG图像 这个图像将被栅格化。</p>
+</li>
+<li><p>feMerge：该滤镜允许同时应用滤镜效果，而不是按照顺序应用滤镜效果。利用result存储别的滤镜的输出可以实现这一点，然后再一个<code>&lt;feMergeNode&gt;</code>子元素中访问它。</p>
+</li>
+<li><p>feMergeNode:feMergeNode元素获取另一个滤镜的结果，让他的父<code>&lt;feMerge&gt;</code>元素处理</p>
+</li>
+<li><p>feMorphology: 该滤镜用来侵蚀或扩张输入的图像。他在增肥或瘦身效果方面特别有用。</p>
+</li>
+<li><p>feOffest：该输入图像作为一个整体，属性dx和属性dy的值指定了它的偏移量。</p>
+</li>
+<li><p>feSpecularLighting：该滤镜照亮一个源图行，使用alpha通道作为隆起映射，该结果图像是一个基于光色的RGBA图像</p>
+</li>
+<li><p>fePoinLight：是一种点光源元素，用于照明过滤，用于SVG文件</p>
+</li>
+<li><p>feSpotLight：是一种光源元素，用于照明过滤，用于SVG文件</p>
+</li>
+<li><p>feTile：输入图像是平铺的，结果用来填充目标。它的效果近似于一个<code>&lt;pattern&gt;</code>图像对象</p>
+</li>
+<li><p>feTurbulence:该滤镜利用Perlin噪声函数创建一个图像，它实现了人造纹理例如 云纹、大理石纹的合成</p>
+<p>用户可以在每个SVG元素是那个使用多个滤镜 （IE和Safari 早期版本不支持SVG滤镜）</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！谢谢！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="小石头 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="小石头 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习/" rel="tag"># 学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/16/es6-语法/" rel="next" title="es6 语法">
+                <i class="fa fa-chevron-left"></i> es6 语法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/12/jquery中的事件/" rel="prev" title="jquery中的事件">
+                jquery中的事件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/user.jpg"
+                alt="小石头" />
+            
+              <p class="site-author-name" itemprop="name">小石头</p>
+              <p class="site-description motion-element" itemprop="description">在牛逼的梦想，也抵不过你傻逼的坚持！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shijintao001" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:773265313@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.shi1991.com" target="_blank" title="个人网站">
+                      
+                        <i class="fa fa-fw fa-user"></i>个人网站</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是SVG"><span class="nav-number">1.</span> <span class="nav-text">什么是SVG?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SVG基础"><span class="nav-number">2.</span> <span class="nav-text">SVG基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SVG发展历史"><span class="nav-number">2.1.</span> <span class="nav-text">SVG发展历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVG特点"><span class="nav-number">2.2.</span> <span class="nav-text">SVG特点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用SVG"><span class="nav-number">3.</span> <span class="nav-text">使用SVG</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SVG滤镜"><span class="nav-number">4.</span> <span class="nav-text">SVG滤镜</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小石头</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
