@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="操作数组的方法delete​    可以借助delete运算符 能删除数组元素，因为Array也是对象，数组元素实际上与对象属性是一样。 12345var a = [1,2,3,&apos;hello&apos;,4,5];//定义数组delete a[3];// 删除指定下标的元素console.log(a);// [1, 2, 3, empty, 4, 5]// delete只能删除元素的值，而不是元素，因此de">
+<meta name="keywords" content="学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组方法">
+<meta property="og:url" content="http://yoursite.com/2017/11/21/数组方法/index.html">
+<meta property="og:site_name" content="大石头">
+<meta property="og:description" content="操作数组的方法delete​    可以借助delete运算符 能删除数组元素，因为Array也是对象，数组元素实际上与对象属性是一样。 12345var a = [1,2,3,&apos;hello&apos;,4,5];//定义数组delete a[3];// 删除指定下标的元素console.log(a);// [1, 2, 3, empty, 4, 5]// delete只能删除元素的值，而不是元素，因此de">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-21T15:42:58.131Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数组方法">
+<meta name="twitter:description" content="操作数组的方法delete​    可以借助delete运算符 能删除数组元素，因为Array也是对象，数组元素实际上与对象属性是一样。 12345var a = [1,2,3,&apos;hello&apos;,4,5];//定义数组delete a[3];// 删除指定下标的元素console.log(a);// [1, 2, 3, empty, 4, 5]// delete只能删除元素的值，而不是元素，因此de">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/11/21/数组方法/"/>
+
+
+
+
+
+  <title>数组方法 | 大石头</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">大石头</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">滴水穿石，不是力量大，而是坚持！！！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/21/数组方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小石头">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/user.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大石头">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数组方法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-21T21:39:50+08:00">
+                2017-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="操作数组的方法"><a href="#操作数组的方法" class="headerlink" title="操作数组的方法"></a>操作数组的方法</h1><h2 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h2><p>​    可以借助delete运算符 能删除数组元素，因为Array也是对象，数组元素实际上与对象属性是一样。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">'hello'</span>,<span class="number">4</span>,<span class="number">5</span>];<span class="comment">//定义数组</span></span><br><span class="line"><span class="keyword">delete</span> a[<span class="number">3</span>];<span class="comment">// 删除指定下标的元素</span></span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">// [1, 2, 3, empty, 4, 5]</span></span><br><span class="line"><span class="comment">// delete只能删除元素的值，而不是元素，因此delete并没有改变数组的长度</span></span><br><span class="line"><span class="comment">// 删除的那个元素 他的依然存在 只是没有值 （empty）</span></span><br></pre></td></tr></table></figure>
+<h2 id="push"><a href="#push" class="headerlink" title="push"></a>push</h2><p>push()方法能够把一个或多个元素添加到数组的最后（尾部），然后返回添加后的数组长度</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [] <span class="comment">// 定义数组 模拟空栈</span></span><br><span class="line">a.push(<span class="number">1</span>);<span class="comment">// 进栈 栈值为[1] 此时该方法返回值为1</span></span><br><span class="line">a.push(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>);<span class="comment">// 进栈 栈值为[2,3,4] </span></span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// [1,2,3,4]</span></span><br><span class="line"><span class="comment">// push 是按参数的顺序依次添加到数组的尾部，所以他是原来数组结构的基础上进行操作，而不是在新创建的数组上执行操作。 在实际开发中，用户可以利用这个特性，动态改变数组的值</span></span><br></pre></td></tr></table></figure>
+<h2 id="pop"><a href="#pop" class="headerlink" title="pop"></a>pop</h2><blockquote>
+<p>pop()方法操作刚好相反，它能够删除数组中最后一个元素，并返回这个元素的值</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">arr.pop();<span class="comment">//删除最后一个元素</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">// [1,2,3,4]</span></span><br><span class="line"><span class="comment">// pop()方法 当删除最后一个元素后，会自动把数组长度减1，如果数组为空，则pop()不会改变数组结构 仅返回undefined</span></span><br></pre></td></tr></table></figure>
+<h2 id="unshift"><a href="#unshift" class="headerlink" title="unshift"></a>unshift</h2><blockquote>
+<p>unshift()方法是在数组头部执行操作，可以包含多个参数，并把这些参数一次性插入数组的头部，第一个参数为数组新的元素0，第二个参数为新的元素1，以此类推。这与一次次插入元素是不同的</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">0</span>]<span class="comment">// 定义数组</span></span><br><span class="line">arr.unshift(<span class="number">1</span>,<span class="number">2</span>)<span class="comment">// 同时增加两个参数</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">// 返回 [1,2,0]</span></span><br></pre></td></tr></table></figure>
+<p>如果分开操作，结果就不同了</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">0</span>]</span><br><span class="line">arr.unshift(<span class="number">1</span>)</span><br><span class="line">arr.unshift(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr)<span class="comment">// 返回[2,1,0]</span></span><br></pre></td></tr></table></figure>
+<h2 id="shift"><a href="#shift" class="headerlink" title="shift"></a>shift</h2><blockquote>
+<p>shift()方法它是将数组第一个元素移除，并返回该元素的值，然后将余下所有元素往前移一位，以填补数组头部的空缺。如果数组为空，shift()将不进行任何操作，返回undefined</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">arr.shift()</span><br><span class="line"><span class="built_in">console</span>.log(arr)<span class="comment">//[1,2]</span></span><br></pre></td></tr></table></figure>
+<p>【温馨提示】unshift 和 shift 方法也是在原数组上进行修改，而不是创建新数组</p>
+<p>示例 pop()和unshift()配合使用 可以模拟队列数据结构的操作模式 即先出先进 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> arr)&#123;<span class="comment">// 遍历数组</span></span><br><span class="line">       <span class="keyword">var</span> tepm = arr.pop()<span class="comment">//先出 把出去的元素值暂时保存</span></span><br><span class="line">       <span class="built_in">console</span>.log(tepm);<span class="comment">// 先进 把出去的元素值放大十倍，再进入</span></span><br><span class="line">       <span class="comment">// console.log(arr);</span></span><br><span class="line">       </span><br><span class="line">       arr.unshift(tepm*<span class="number">10</span>);</span><br><span class="line">   </span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">console</span>.log(arr);<span class="comment">// [10,20,30,40,50]</span></span><br></pre></td></tr></table></figure>
+<p>push 与 shift 结合使用 模拟队列数据结构的操作模式 即 先进先出</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> a)&#123;</span><br><span class="line">    <span class="keyword">var</span> t = a.shift() </span><br><span class="line">    a.push(t*<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//[10,20,30,40]</span></span><br></pre></td></tr></table></figure>
+<h2 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h2><blockquote>
+<p>concat是一个比较特殊的数组元素添加方法 他采用粘接的方式把参数添加到数组中</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">var</span> b = arr.concat(<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>)</span><br><span class="line"><span class="built_in">console</span>.log(b);<span class="comment">//[1,2,3,4,5,6,7,8]</span></span><br></pre></td></tr></table></figure>
+<p>concat 方法 比较特殊 使用应注意下面几个问题</p>
+<ol>
+<li>concat()方法可以跟随多个参数，并把他们作为元素按顺序连接到数组的尾部。如果参数是数组，则concat()方法会把它打散分别作为单独的元素连接到数组的尾部<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span>  a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">var</span> b = a.concat([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'数组--&gt;'</span>,b,<span class="string">'数组长度---&gt;'</span>,b.length);<span class="comment">//数组--&gt;  [1, 2, 3, 4, 5, 1, 2, 3, 4, 5] 数组长度---&gt; 10</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>​    虽然concat()方法能够打散一维数组，但是他不会递归打散参数数组中包含的数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">var</span> b = a.concat([[<span class="number">1</span>,<span class="number">2</span>],<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'数组--&gt;'</span>,b,<span class="string">'数组长度---&gt;'</span>,b.length);<span class="comment">// 返回长度9 说明参数数组[1,2]没有被打散</span></span><br><span class="line"><span class="comment">//数组--&gt; (9) [1, 2, 3, 4, 5, Array(2), 3, 4, 5]0: 11: 22: 33: 44: 55: (2) [1, 2]6: 37: 48: 5length: 9__proto__: Array(0) 数组长度---&gt; 9</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>concat()方法将创建并返回一个新数组 而不是在原来数组基础上添加新元素。所以 希望在原数组基础上添加元素，建议使用push 和 unshift 来实现 但是 push和unshift 不能打散参数数组，而是把它作为单数的参数执行添加操作。</li>
+</ol>
+<p>##splice</p>
+<blockquote>
+<p>splice()方法是增加和删除多个数组元素的通用方法。这个方法的参数比较复杂，其中第1个参数为操作的起始下标位置，第2个参数指定要删除元素的个数，第3个及后面的所有不定参数为将要插入的元素。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="comment">//第1个参数表示从该数组中下标为1 开始</span></span><br><span class="line"><span class="comment">//第2个参数表示删除2个元素</span></span><br><span class="line"><span class="comment">//第3个后面的 就是在删除的位置同时添加元素</span></span><br><span class="line">a.splice(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">// [1,3,4,5,4,5]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="comment">// 数组的下标是从0开始</span></span><br><span class="line"><span class="comment">//如果只传一个参数 则是从下标 2 开始 删除后面所有</span></span><br><span class="line">a.splice(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//[1,2]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="comment">// 给两个参数时  就是从下标为 2 开始 删除 只删除2个</span></span><br><span class="line">a.splice(<span class="number">2</span>,<span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//[1,2,5]</span></span><br></pre></td></tr></table></figure>
+<p>参数取负值问题 如果第一个参数 为负值 则按绝对值从数组右侧开始向左侧定位，如果第2个参数为负值，则被视为0</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"> a.splice(<span class="number">-2</span>,<span class="number">-2</span>,<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(a);<span class="comment">//[1, 2, 3, 2, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
+<h2 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h2><blockquote>
+<p>slice()方法与splice()方法功能很相近 但是它能够截取数组中指定区段的元素，并返回这个子数组，该方法包含两个参数，分别指定截取子数组的起始和结束位置的下标。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">arr.slice(start,end)</span><br><span class="line"><span class="comment">//start 必需。规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。</span></span><br><span class="line"><span class="comment">// end 可选。规定从何处结束选取。该参数是数组片断结束处的数组下标。如果没有指定该参数，那么切分的数组包含从 start 到数组结束的所有元素。如果这个参数是负数，那么它规定的是从数组尾部开始算起的元素。</span></span><br><span class="line"><span class="comment">//返回值</span></span><br><span class="line"><span class="comment">//返回一个新的数组，包含从 start 到 end （不包括该元素）的 ar 中的元素。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//说明</span></span><br><span class="line"><span class="comment">//请注意，该方法并不会修改数组，而是返回一个子数组。如果想删除数组中的一段元素，应该使用方法 Array.splice()。</span></span><br><span class="line"><span class="comment">//提示和注释</span></span><br><span class="line"><span class="comment">//注释：您可使用负值从数组的尾部选取元素。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//注释：如果 end 未被规定，那么 slice() 方法会选取从 start 到数组结尾的所有元素。</span></span><br></pre></td></tr></table></figure>
+<h2 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h2><blockquote>
+<p>reverse()方法能够颠倒数组元素的排列顺序 该方法不需要参数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">arr.reverse();</span><br><span class="line"><span class="built_in">console</span>.log(a)<span class="comment">//[5,4,3,2,1]</span></span><br><span class="line"><span class="comment">// 注意 该方法是在原数组基础上操作，并不是创建新的数组</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h2><blockquote>
+<p>sort()方法能够根据一定条件对数组元素进行排序。如果调用sort()方法时没有传递参数。则按字母顺序对数组中的元素进行排序</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>,<span class="string">'e'</span>,<span class="string">'d'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br><span class="line">a.sort()</span><br><span class="line"><span class="built_in">console</span>.log(a)<span class="comment">//["a", "b", "c", "d", "e"]</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>所谓的字母顺序，实际上是根据字母在字符编码表中的顺序进行排序的，每个字符在字符表中都有一个唯一的编号。</p>
+</li>
+<li><p>如果元素不是字符串 则sort 方法会试图把数组的元素都转换成字符串，以便进行比较</p>
+</li>
+<li><p>在排序时，sort 方法将根据元素值进行逐位比较，而不是根据字符串的个数进行排序，在排序时首先比较每个元素的第一个字符，在第一个字符相同的情况下，在比较第2个字符，以此类推。</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = [<span class="string">'aba'</span>,<span class="string">'baa'</span>,<span class="string">'aab'</span>] </span><br><span class="line">a.sort() </span><br><span class="line"><span class="built_in">console</span>.log(a)<span class="comment">// ["aab", "aba", "baa"]</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>在任何情况下，数组中undefined 的元素都被排列在数组末尾</li>
+<li>sort 方法是在原数组基础是那个个进行排序操作 不会创建新的数组</li>
+</ol>
+<p>##toString</p>
+<blockquote>
+<p>toString 将数组转换成一个字符串</p>
+</blockquote>
+<p>##toLocaleString</p>
+<blockquote>
+<p>toLocaleString()把数组转换成局部字符串</p>
+</blockquote>
+<p>##join</p>
+<blockquote>
+<p>join()将数组元素连接起来构建一个字符串</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！谢谢！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="小石头 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="小石头 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习/" rel="tag"># 学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/19/es5中数组方法/" rel="next" title="es5中数组方法">
+                <i class="fa fa-chevron-left"></i> es5中数组方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/user.jpg"
+                alt="小石头" />
+            
+              <p class="site-author-name" itemprop="name">小石头</p>
+              <p class="site-description motion-element" itemprop="description">在牛逼的梦想，也抵不过你傻逼的坚持！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shijintao001" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:773265313@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.shi1991.com" target="_blank" title="个人网站">
+                      
+                        <i class="fa fa-fw fa-user"></i>个人网站</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#操作数组的方法"><span class="nav-number">1.</span> <span class="nav-text">操作数组的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#delete"><span class="nav-number">1.1.</span> <span class="nav-text">delete</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#push"><span class="nav-number">1.2.</span> <span class="nav-text">push</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pop"><span class="nav-number">1.3.</span> <span class="nav-text">pop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unshift"><span class="nav-number">1.4.</span> <span class="nav-text">unshift</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shift"><span class="nav-number">1.5.</span> <span class="nav-text">shift</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#concat"><span class="nav-number">1.6.</span> <span class="nav-text">concat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#slice"><span class="nav-number">1.7.</span> <span class="nav-text">slice</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reverse"><span class="nav-number">1.8.</span> <span class="nav-text">reverse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort"><span class="nav-number">1.9.</span> <span class="nav-text">sort</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小石头</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
