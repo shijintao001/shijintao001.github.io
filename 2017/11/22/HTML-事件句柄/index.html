@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="DHTML事件句柄      onmouseover 鼠标指针移上去   onmouseout 鼠标移开的效果   onclick 点击事件   onmousedown 按住鼠标时灯才会亮   onmouseup 按住鼠标时灯才会亮   onload 当页面完成加载是显示一个提示框   事件 当…时发生   onabort 用户终止页面加载   onblur 用户离开对象（失去焦点）   o">
+<meta name="keywords" content="学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML 事件句柄">
+<meta property="og:url" content="http://yoursite.com/2017/11/22/HTML-事件句柄/index.html">
+<meta property="og:site_name" content="大石头">
+<meta property="og:description" content="DHTML事件句柄      onmouseover 鼠标指针移上去   onmouseout 鼠标移开的效果   onclick 点击事件   onmousedown 按住鼠标时灯才会亮   onmouseup 按住鼠标时灯才会亮   onload 当页面完成加载是显示一个提示框   事件 当…时发生   onabort 用户终止页面加载   onblur 用户离开对象（失去焦点）   o">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-22T15:25:15.688Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML 事件句柄">
+<meta name="twitter:description" content="DHTML事件句柄      onmouseover 鼠标指针移上去   onmouseout 鼠标移开的效果   onclick 点击事件   onmousedown 按住鼠标时灯才会亮   onmouseup 按住鼠标时灯才会亮   onload 当页面完成加载是显示一个提示框   事件 当…时发生   onabort 用户终止页面加载   onblur 用户离开对象（失去焦点）   o">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/11/22/HTML-事件句柄/"/>
+
+
+
+
+
+  <title>HTML 事件句柄 | 大石头</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">大石头</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">滴水穿石，不是力量大，而是坚持！！！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/22/HTML-事件句柄/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小石头">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/user.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大石头">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTML 事件句柄</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-22T16:18:48+08:00">
+                2017-11-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <table>
+<thead>
+<tr>
+<th>DHTML事件句柄</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>onmouseover</code></td>
+<td>鼠标指针移上去</td>
+</tr>
+<tr>
+<td><code>onmouseout</code></td>
+<td>鼠标移开的效果</td>
+</tr>
+<tr>
+<td><code>onclick</code></td>
+<td>点击事件</td>
+</tr>
+<tr>
+<td><code>onmousedown</code></td>
+<td>按住鼠标时灯才会亮</td>
+</tr>
+<tr>
+<td><code>onmouseup</code></td>
+<td>按住鼠标时灯才会亮</td>
+</tr>
+<tr>
+<td><code>onload</code></td>
+<td>当页面完成加载是显示一个提示框</td>
+</tr>
+<tr>
+<td>事件</td>
+<td>当…时发生</td>
+</tr>
+<tr>
+<td><code>onabort</code></td>
+<td>用户终止页面加载</td>
+</tr>
+<tr>
+<td><code>onblur</code></td>
+<td>用户离开对象（失去焦点）</td>
+</tr>
+<tr>
+<td><code>onfocus</code></td>
+<td>用户激活对象（获取焦点）</td>
+</tr>
+<tr>
+<td><code>onchange</code></td>
+<td>用户改变对象的值</td>
+</tr>
+<tr>
+<td><code>onclick</code></td>
+<td>用户点击对象（单击）</td>
+</tr>
+<tr>
+<td><code>ondblclick</code></td>
+<td>用户双击对象（双击）</td>
+</tr>
+<tr>
+<td><code>onkeypress</code></td>
+<td>按压键盘</td>
+</tr>
+<tr>
+<td><code>onkeydown</code></td>
+<td>按下键盘</td>
+</tr>
+<tr>
+<td><code>onkeyup</code></td>
+<td>松开键盘</td>
+</tr>
+<tr>
+<td><code>onload</code></td>
+<td>页面完成加载</td>
+</tr>
+<tr>
+<td><code>onmousedown</code></td>
+<td>用户按下鼠标按钮</td>
+</tr>
+<tr>
+<td><code>onmousemove</code></td>
+<td>鼠标指针在对象上移动</td>
+</tr>
+<tr>
+<td><code>onmouseover</code></td>
+<td>鼠标指针移动到对象上（鼠标悬停）</td>
+</tr>
+<tr>
+<td><code>onmouseout</code></td>
+<td>鼠标指针移出对象</td>
+</tr>
+<tr>
+<td><code>onmouseup</code></td>
+<td>用户释放鼠标按钮</td>
+</tr>
+<tr>
+<td><code>onreset</code></td>
+<td>用户重置表单</td>
+</tr>
+<tr>
+<td><code>onsubmit</code></td>
+<td>用户提交表单</td>
+</tr>
+<tr>
+<td><code>onselect</code></td>
+<td>用户选取页面上的内容</td>
+</tr>
+<tr>
+<td><code>onunload</code></td>
+<td>用户关闭页面</td>
+</tr>
+<tr>
+<td><code>Offset  家族</code></td>
+<td>拿到的是盒子大小包括边框和padding</td>
+</tr>
+<tr>
+<td><code>OffsetWidth</code></td>
+<td>宽</td>
+</tr>
+<tr>
+<td><code>OffsetHeight</code></td>
+<td>高</td>
+</tr>
+<tr>
+<td><code>OffsetParent</code></td>
+<td>第一个非静态定位元素的父元素若是没有就是Body</td>
+</tr>
+<tr>
+<td><code>OffsetLeft</code></td>
+<td>和offsetParent之间的距离</td>
+</tr>
+<tr>
+<td><code>OffsetTop</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Scroll</code></td>
+<td>指的是内容大小</td>
+</tr>
+<tr>
+<td><code>ScrollWidth/Height</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>ScrollTop</code></td>
+<td>当有垂直滚动条时 上面卷起来的部分</td>
+</tr>
+<tr>
+<td><code>ScrollLeft</code></td>
+<td>当有水平滚动条时左边卷起来的部分</td>
+</tr>
+<tr>
+<td>获取界面的滚动效果</td>
+<td>Window.pageYoffset  垂直方向     Window.pageXoffset  水平方向</td>
+</tr>
+<tr>
+<td>节点</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ChildNodes</code></td>
+<td>所有孩子的节点</td>
+</tr>
+<tr>
+<td><code>First  child</code></td>
+<td>第一个节点</td>
+</tr>
+<tr>
+<td><code>Lastchild</code></td>
+<td>最后一个节点</td>
+</tr>
+<tr>
+<td><code>Nextsibling</code></td>
+<td>下一个兄弟节点</td>
+</tr>
+<tr>
+<td><code>PreviousSibling</code></td>
+<td>上一个兄弟节点</td>
+</tr>
+<tr>
+<td><code>ParentNode</code></td>
+<td>父节点</td>
+</tr>
+<tr>
+<td>元素</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ParentNode</code></td>
+<td>可以拿到父元素</td>
+</tr>
+<tr>
+<td><code>Children</code></td>
+<td>所有子元素</td>
+</tr>
+<tr>
+<td><code>firstElementChild</code></td>
+<td>第一个子元素</td>
+</tr>
+<tr>
+<td><code>LastElementChild</code></td>
+<td>最后一个子元素</td>
+</tr>
+<tr>
+<td><code>NextElementsibling</code></td>
+<td>下一个兄弟元素</td>
+</tr>
+<tr>
+<td><code>PreviousElementSibling</code></td>
+<td>上一个兄弟元素</td>
+</tr>
+<tr>
+<td><code>appendchild</code></td>
+<td>把子元素增加到父元素里</td>
+</tr>
+<tr>
+<td><code>CloneNode(false)</code></td>
+<td>只克隆节点</td>
+</tr>
+<tr>
+<td><code>CloneNode(true)</code></td>
+<td>克隆节点和内容</td>
+</tr>
+<tr>
+<td><code>InsertBefore</code></td>
+<td>（插入的 ，插入的位置）</td>
+</tr>
+<tr>
+<td>创建节点</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Document.write  InnerHTML</code></td>
+<td>不常用</td>
+</tr>
+<tr>
+<td><code>CreateElement</code></td>
+<td>创建节点</td>
+</tr>
+<tr>
+<td><code>Document.createElement</code>（’标签名’）</td>
+<td></td>
+</tr>
+<tr>
+<td>删除子元素</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Removechild</code></td>
+<td>从爹里面删除儿子</td>
+</tr>
+<tr>
+<td>数组方法</td>
+<td>Var  arr = new Amay()</td>
+</tr>
+<tr>
+<td><code>Push()</code></td>
+<td>末尾添加一个元素或多个元素</td>
+</tr>
+<tr>
+<td><code>Pop()</code></td>
+<td>末尾删除一个元素</td>
+</tr>
+<tr>
+<td><code>Unshift</code></td>
+<td>最前面添加一个或多个元素</td>
+</tr>
+<tr>
+<td><code>Shift</code></td>
+<td>最前面删除一个元素</td>
+</tr>
+<tr>
+<td><code>reverse()</code></td>
+<td>反转数组</td>
+</tr>
+<tr>
+<td><code>Sort()</code></td>
+<td>排序需要一个参数</td>
+</tr>
+<tr>
+<td><code>Sort(a,b)</code></td>
+<td>数字比较</td>
+</tr>
+<tr>
+<td><code>Return  a-b;</code></td>
+<td>升序</td>
+</tr>
+<tr>
+<td><code>Return  b-a</code></td>
+<td>降序</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Concat()</code>连接数组</td>
+<td>Var  arr1 = []  Var  arr2 = []  Arr.concat(arr2,arr3)</td>
+</tr>
+<tr>
+<td><code>Slice()</code></td>
+<td>两个参数[开始位置，结束位置]</td>
+</tr>
+<tr>
+<td><code>Splice(3)</code>  一个参数</td>
+<td>从第3个开始后面都删除包括3</td>
+</tr>
+<tr>
+<td><code>Splice(3,3)</code>两个参数</td>
+<td>从第3个开始删除3个（包括第三个也删除）</td>
+</tr>
+<tr>
+<td><code>Splice(3,5,100,200,50)</code></td>
+<td>多个参数 第3个开始删除3个然后往里面添加内容</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！谢谢！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="小石头 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="小石头 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习/" rel="tag"># 学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/21/数组方法/" rel="next" title="数组方法">
+                <i class="fa fa-chevron-left"></i> 数组方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/user.jpg"
+                alt="小石头" />
+            
+              <p class="site-author-name" itemprop="name">小石头</p>
+              <p class="site-description motion-element" itemprop="description">在牛逼的梦想，也抵不过你傻逼的坚持！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shijintao001" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:773265313@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.shi1991.com" target="_blank" title="个人网站">
+                      
+                        <i class="fa fa-fw fa-user"></i>个人网站</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小石头</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
