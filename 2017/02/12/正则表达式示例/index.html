@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="个人收集在实际开发中经常使用的正则表达式 目的：方便以后进行查找，减少工作量  1.校验日期格式12var reg1 = /^\d&amp;#123;4&amp;#125;(\-|\/|\.)\d&amp;#123;1,2&amp;#125;\1\d&amp;#123;1,2&amp;#125;$/;var reg2 = /^(^(\d&amp;#123;4&amp;#125;|\d&amp;#123;2&amp;#125;)(\-|\/|\.)\d&amp;#123;1,2&amp;#12">
+<meta name="description" content="个人收集在实际开发中经常使用的正则表达式 目的：方便以后进行查找，减少工作量  正则表达式简介什么是正则表达式正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为”元字符”），正则表达式最初是科学家对人类神经系统的工作原理的早期研究，现在在编程语言中有广泛的应用。正则表通常被用来检索、替换那些符合某个模式(规则)的文本。 正">
 <meta name="keywords" content="学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="正则表达式示例">
 <meta property="og:url" content="http://yoursite.com/2017/02/12/正则表达式示例/index.html">
 <meta property="og:site_name" content="大石头">
-<meta property="og:description" content="个人收集在实际开发中经常使用的正则表达式 目的：方便以后进行查找，减少工作量  1.校验日期格式12var reg1 = /^\d&amp;#123;4&amp;#125;(\-|\/|\.)\d&amp;#123;1,2&amp;#125;\1\d&amp;#123;1,2&amp;#125;$/;var reg2 = /^(^(\d&amp;#123;4&amp;#125;|\d&amp;#123;2&amp;#125;)(\-|\/|\.)\d&amp;#123;1,2&amp;#12">
+<meta property="og:description" content="个人收集在实际开发中经常使用的正则表达式 目的：方便以后进行查找，减少工作量  正则表达式简介什么是正则表达式正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为”元字符”），正则表达式最初是科学家对人类神经系统的工作原理的早期研究，现在在编程语言中有广泛的应用。正则表通常被用来检索、替换那些符合某个模式(规则)的文本。 正">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-12T07:24:20.872Z">
+<meta property="og:updated_time" content="2018-03-28T16:25:48.763Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式示例">
-<meta name="twitter:description" content="个人收集在实际开发中经常使用的正则表达式 目的：方便以后进行查找，减少工作量  1.校验日期格式12var reg1 = /^\d&amp;#123;4&amp;#125;(\-|\/|\.)\d&amp;#123;1,2&amp;#125;\1\d&amp;#123;1,2&amp;#125;$/;var reg2 = /^(^(\d&amp;#123;4&amp;#125;|\d&amp;#123;2&amp;#125;)(\-|\/|\.)\d&amp;#123;1,2&amp;#12">
+<meta name="twitter:description" content="个人收集在实际开发中经常使用的正则表达式 目的：方便以后进行查找，减少工作量  正则表达式简介什么是正则表达式正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为”元字符”），正则表达式最初是科学家对人类神经系统的工作原理的早期研究，现在在编程语言中有广泛的应用。正则表通常被用来检索、替换那些符合某个模式(规则)的文本。 正">
 
 
 
@@ -345,7 +345,119 @@
         <h2 id="个人收集在实际开发中经常使用的正则表达式"><a href="#个人收集在实际开发中经常使用的正则表达式" class="headerlink" title="个人收集在实际开发中经常使用的正则表达式"></a>个人收集在实际开发中经常使用的正则表达式</h2><blockquote>
 <p>目的：方便以后进行查找，减少工作量</p>
 </blockquote>
-<p>1.校验日期格式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg1 = <span class="regexp">/^\d&#123;4&#125;(\-|\/|\.)\d&#123;1,2&#125;\1\d&#123;1,2&#125;$/</span>;</span><br><span class="line"><span class="keyword">var</span> reg2 = <span class="regexp">/^(^(\d&#123;4&#125;|\d&#123;2&#125;)(\-|\/|\.)\d&#123;1,2&#125;\3\d&#123;1,2&#125;$) | (^\d&#123;4&#125;年\d&#123;1,2&#125;月\d&#123;1,2&#125;日$)$/</span>;</span><br></pre></td></tr></table></figure></p>
+<h1 id="正则表达式简介"><a href="#正则表达式简介" class="headerlink" title="正则表达式简介"></a>正则表达式简介</h1><h2 id="什么是正则表达式"><a href="#什么是正则表达式" class="headerlink" title="什么是正则表达式"></a>什么是正则表达式</h2><p>正则表达式(Regular Expression)是一种文本模式，包括普通字符（例如，a 到 z 之间的字母）和特殊字符（称为”元字符”），正则表达式最初是科学家对人类神经系统的工作原理的早期研究，现在在编程语言中有广泛的应用。正则表通常被用来检索、替换那些符合某个模式(规则)的文本。</p>
+<h2 id="正则表达式特点"><a href="#正则表达式特点" class="headerlink" title="正则表达式特点"></a>正则表达式特点</h2><ul>
+<li>可以迅速地用极简单的方式达到字符串的复杂控制</li>
+<li>灵活性、逻辑性和功能性非常的强</li>
+<li>对于刚接触的人来说，比较晦涩难懂</li>
+</ul>
+<p>##正则表达式速记</p>
+<h3 id="限定符"><a href="#限定符" class="headerlink" title="限定符"></a>限定符</h3><table>
+<thead>
+<tr>
+<th>限定符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>重复零次或更多次</td>
+</tr>
+<tr>
+<td>+</td>
+<td>重复一次或更多次</td>
+</tr>
+<tr>
+<td>?</td>
+<td>重复零次或一次</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>重复n次</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>重复n次或更多次</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>重复n到m次</td>
+</tr>
+</tbody>
+</table>
+<h3 id="元字符串"><a href="#元字符串" class="headerlink" title="元字符串"></a>元字符串</h3><table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\d</td>
+<td>匹配数字</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配任意非数字的字符</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配字母或数字或下划线</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>匹配任意不是字母，数字，下划线</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任意的空白符</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任意不是空白符的字符</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配除换行符以外的任意单个字符</td>
+</tr>
+<tr>
+<td>^</td>
+<td>表示匹配行首的文本(以谁开始)</td>
+</tr>
+<tr>
+<td>$</td>
+<td>表示匹配行尾的文本(以谁结束)</td>
+</tr>
+</tbody>
+</table>
+<p>###其他</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[^]</td>
+<td>匹配除中括号以内的内容</td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>字符串用中括号括起来，表示匹配其中的任一字符，相当于或的意思</td>
+</tr>
+<tr>
+<td>\</td>
+<td>转义符</td>
+</tr>
+</tbody>
+</table>
+<p>##常见正则表达案例</p>
+<p>1.校验日期格式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg1 = <span class="regexp">/^\d&#123;4&#125;(\-|\/|\.)\d&#123;1,2&#125;\1\d&#123;1,2&#125;$/</span>;</span><br><span class="line"><span class="keyword">var</span> reg2 = <span class="regexp">/^(^(\d&#123;4&#125;|\d&#123;2&#125;)(\-|\/|\.)\d&#123;1,2&#125;\3\d&#123;1,2&#125;$) | (^\d&#123;4&#125;年\d&#123;1,2&#125;月\d&#123;1,2&#125;日$)$/</span>;</span><br></pre></td></tr></table></figure>
 <ol>
 <li>密码校验强度<blockquote>
 <p>密码的强度必须是包含大小写字符和数字的组合，不能使用特殊的字符，长度在6-12位之间</p>
@@ -693,7 +805,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#个人收集在实际开发中经常使用的正则表达式"><span class="nav-number">1.</span> <span class="nav-text">个人收集在实际开发中经常使用的正则表达式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#个人收集在实际开发中经常使用的正则表达式"><span class="nav-number">1.</span> <span class="nav-text">个人收集在实际开发中经常使用的正则表达式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式简介"><span class="nav-number"></span> <span class="nav-text">正则表达式简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是正则表达式"><span class="nav-number">1.</span> <span class="nav-text">什么是正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式特点"><span class="nav-number">2.</span> <span class="nav-text">正则表达式特点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#限定符"><span class="nav-number">2.1.</span> <span class="nav-text">限定符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元字符串"><span class="nav-number">2.2.</span> <span class="nav-text">元字符串</span></a></li></ol></li></ol></div>
             
 
           </div>
