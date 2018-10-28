@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="学习," />
+  <meta name="keywords" content="--随心," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="引言当我们刚接触JavaScript的时候，我们写的大部分js代码，一般都是写一些函数在JS文件里边，然后通过script标签引进来，在DOM节点上绑定onclick等事件，尤其是个人独立不太大型的项目的时候，套路基本都是这样。  存在的问题当我们开始慢慢接触一些大型项目，多人合作开发的时候，慢慢我们就会发现，这样简单的写一些js文件，然后随心所欲的开发，会出现许许多多的问题。由于每个人的编码风">
-<meta name="keywords" content="学习">
+<meta name="description" content="TypeScript是什么？TypeSctipt 是微软公司开发的一款开源的JavaScript 超集语言JavaScript超集：当前任何JavaScript 都是合法的TypeScript代码TypeScript 主要为JavaScript 提供了类型系统和ES6语法的支持 flow 是一个类型检查工具， TypeScript 是一门开发语言TypeScript 有自己的编译工具，我们写好的T">
+<meta name="keywords" content="--随心">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript全局变量污染问题">
-<meta property="og:url" content="http://yoursite.com/2018/01/16/博客111/index.html">
+<meta property="og:title" content="TypeScript的简介">
+<meta property="og:url" content="http://yoursite.com/2018/10/28/TypeScript的简介/index.html">
 <meta property="og:site_name" content="大石头">
-<meta property="og:description" content="引言当我们刚接触JavaScript的时候，我们写的大部分js代码，一般都是写一些函数在JS文件里边，然后通过script标签引进来，在DOM节点上绑定onclick等事件，尤其是个人独立不太大型的项目的时候，套路基本都是这样。  存在的问题当我们开始慢慢接触一些大型项目，多人合作开发的时候，慢慢我们就会发现，这样简单的写一些js文件，然后随心所欲的开发，会出现许许多多的问题。由于每个人的编码风">
+<meta property="og:description" content="TypeScript是什么？TypeSctipt 是微软公司开发的一款开源的JavaScript 超集语言JavaScript超集：当前任何JavaScript 都是合法的TypeScript代码TypeScript 主要为JavaScript 提供了类型系统和ES6语法的支持 flow 是一个类型检查工具， TypeScript 是一门开发语言TypeScript 有自己的编译工具，我们写好的T">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-30T14:51:30.901Z">
+<meta property="og:updated_time" content="2018-10-28T08:57:45.893Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript全局变量污染问题">
-<meta name="twitter:description" content="引言当我们刚接触JavaScript的时候，我们写的大部分js代码，一般都是写一些函数在JS文件里边，然后通过script标签引进来，在DOM节点上绑定onclick等事件，尤其是个人独立不太大型的项目的时候，套路基本都是这样。  存在的问题当我们开始慢慢接触一些大型项目，多人合作开发的时候，慢慢我们就会发现，这样简单的写一些js文件，然后随心所欲的开发，会出现许许多多的问题。由于每个人的编码风">
+<meta name="twitter:title" content="TypeScript的简介">
+<meta name="twitter:description" content="TypeScript是什么？TypeSctipt 是微软公司开发的一款开源的JavaScript 超集语言JavaScript超集：当前任何JavaScript 都是合法的TypeScript代码TypeScript 主要为JavaScript 提供了类型系统和ES6语法的支持 flow 是一个类型检查工具， TypeScript 是一门开发语言TypeScript 有自己的编译工具，我们写好的T">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/16/博客111/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/28/TypeScript的简介/"/>
 
 
 
 
 
-  <title>JavaScript全局变量污染问题 | 大石头</title>
+  <title>TypeScript的简介 | 大石头</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/16/博客111/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/28/TypeScript的简介/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小石头">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript全局变量污染问题</h1>
+          <h1 class="post-title" itemprop="name headline">TypeScript的简介</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-16T22:46:27+08:00">
-                2018-01-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-28T16:01:02+08:00">
+                2018-10-28
               </time>
             
 
@@ -292,28 +292,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -342,22 +320,22 @@
       
 
       
-        <blockquote>
-<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>当我们刚接触JavaScript的时候，我们写的大部分js代码，一般都是写一些函数在JS文件里边，然后通过script标签引进来，在DOM节点上绑定onclick等事件，尤其是个人独立不太大型的项目的时候，套路基本都是这样。</p>
-</blockquote>
-<h3 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h3><p>当我们开始慢慢接触一些大型项目，多人合作开发的时候，慢慢我们就会发现，这样简单的写一些js文件，然后随心所欲的开发，会出现许许多多的问题。由于每个人的编码风格不太相同，一些变量和函数的命名或多或少的会出现一些问题，尤其是这些问题导致的一些命名冲突问题，非常麻烦，非常难以发现和解决。</p>
-<h3 id="关于全局变量和window"><a href="#关于全局变量和window" class="headerlink" title="关于全局变量和window"></a>关于全局变量和window</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a = 100;</span><br><span class="line">function fn1 ()&#123;</span><br><span class="line">      b = 200;</span><br><span class="line">&#125;</span><br><span class="line">function fn2()&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面的a是全局变量，b虽然没有声明，但是也是全局可以访问的隐式全局变量，函数fn1和fn2都属于挂在window下面的全局变量<br>我们可以通过3中方法访问到上面的变量和函数：</p>
-<ul>
-<li>直接访问</li>
-<li>使用window，例如：window.a   ，  window.fn1  ，  window.fn2</li>
-<li>利用中括号[]  例如：window[a]</li>
-</ul>
-<h3 id="关于全局变量污染"><a href="#关于全局变量污染" class="headerlink" title="关于全局变量污染"></a>关于全局变量污染</h3><p>由于大型项目多人协作开发，每个人都会创建许多js文件，如果公司有一套完整的开发命令规范，可以有效的避免许多开发中的问题，但是许多公司是没有这些开发规范的。<br>如果程序员A写了一个分割字符串的函数叫做fn，另一个人在另一个js文件也写了一个fn函数，功能是分割数组，那么很尴尬，这种变量污染，如果你不小心，你会调试到崩溃的。<br>因为你调用了fn，你以为是分割字符串，但是其实分割字符串的fn已经被分割数组的fn覆盖了，返回的结果不是，又正巧没有报错，那么调试起来很麻烦的。</p>
-<h3 id="减少污染"><a href="#减少污染" class="headerlink" title="减少污染"></a>减少污染</h3><p>为了避免过多这样的冲突，以及模块之间的耦合性更低，需要减少这样的污染，这个时候匿名函数就是我们的救星,<strong><em>作用就类似于C++当中的命名空间或者Java中的包（package）</em></strong></p>
-<h3 id="匿名函数防止变量被污染"><a href="#匿名函数防止变量被污染" class="headerlink" title="匿名函数防止变量被污染"></a>匿名函数防止变量被污染</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">（function()&#123;</span><br><span class="line">    var exp=&#123;&#125;;</span><br><span class="line">    var name=&quot;aa&quot;;</span><br><span class="line">    exp.method=function()&#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;;</span><br><span class="line">    //通过window暴露exp出去，在Node.js中也有专门的模块实现这样的功能</span><br><span class="line">    window.ex=exp;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>函数可以分割作用域，如果用匿名函数包裹起来，那么里面的所用的变量和函数，都会变成局部变量，外部就无法污染了，想用什么属性，就挂在window下面开放出去就可以了</strong></p>
-
+        <h1 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h1><h2 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h2><p>TypeSctipt 是微软公司开发的一款开源的JavaScript 超集语言<br>JavaScript超集：当前任何JavaScript 都是合法的TypeScript代码<br>TypeScript 主要为JavaScript 提供了类型系统和ES6语法的支持</p>
+<p>flow 是一个类型检查工具， TypeScript 是一门开发语言<br>TypeScript 有自己的编译工具，我们写好的TypeScript 代码最终会通过编译器编译为JavaScript代码运行</p>
+<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>###安装TypeScript<br>TypeScript 命令行工具安装（TS编辑器）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i typescript -g</span><br></pre></td></tr></table></figure></p>
+<p>安装完了 全局会提供一个<code>tsc</code>命令给我们使用<br>tsc –init<br>tsc -p ./tsconfig.json  // 会生成一个dist 目录</p>
+<h3 id="编写TS代码"><a href="#编写TS代码" class="headerlink" title="编写TS代码"></a>编写TS代码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num: number = <span class="number">100</span></span><br><span class="line">num =  <span class="number">10000</span></span><br><span class="line"></span><br><span class="line">funtion test(a: number, <span class="attr">b</span>: number): number &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>###TS 配置文件说明</p>
+<ol>
+<li>创建配置文件<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tsc --init</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>2.设置配置项<br>    <em>target: 指的就是将ts代码要转换成哪个版本的js代码 es5 
+    </em>module：指的救赎将ts代码转成js代码后，使用的模块化的标准是什么<br>    <em>outDir: 指的就是将ts代码转成js代码之后，js代码存放的文件夹路径
+    </em>rootDir：指的就是要将哪个目录中的ts代码进行转换，ts代码存放的路径<br>    *strict： 是否要将ts代码转换为严格模式js代码</p>
+<p>3.使用配置文件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tsc -p ./tsconfig.json</span><br></pre></td></tr></table></figure></p>
+<p>###TypeScript中的数据类型</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// number 类型</span></span><br><span class="line"><span class="keyword">let</span> a: number = <span class="number">10</span></span><br><span class="line"><span class="keyword">let</span> b: number = <span class="literal">NaN</span></span><br><span class="line"><span class="keyword">let</span> c: number = <span class="literal">Infinity</span></span><br><span class="line"><span class="keyword">let</span> d: number = <span class="number">0xA12</span></span><br><span class="line"><span class="keyword">let</span> e:number = <span class="number">0b1010101</span></span><br><span class="line"><span class="keyword">let</span> f:number = <span class="number">0o74</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// string</span></span><br><span class="line"><span class="keyword">let</span> str: string = <span class="string">"这是一个字符串"</span></span><br><span class="line"><span class="keyword">let</span> str1: string = <span class="string">'这是一个字符串'</span></span><br><span class="line"><span class="keyword">let</span> str2: string =<span class="string">`这是一个字符串模板<span class="subst">$&#123;a&#125;</span>`</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// boolean</span></span><br><span class="line"><span class="keyword">let</span> flag: boolean = <span class="literal">true</span></span><br><span class="line"><span class="keyword">let</span> flag1: boolean = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 数组</span></span><br><span class="line"><span class="comment">// Array&lt;数组类型&gt;</span></span><br><span class="line"><span class="keyword">let</span> arr: <span class="built_in">Array</span>&lt;number&gt; = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr1: number[] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 元组（Tuple）</span></span><br><span class="line"><span class="keyword">let</span> arr2: [number, string] =  [<span class="number">1</span>,<span class="string">'a'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// void 空值</span></span><br><span class="line"><span class="keyword">let</span> res: <span class="keyword">void</span> = <span class="literal">undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// undefined </span></span><br><span class="line"><span class="comment">// null</span></span><br><span class="line"><span class="keyword">let</span> res1: <span class="literal">undefined</span> = <span class="literal">undefined</span></span><br><span class="line"><span class="keyword">let</span> res2: <span class="literal">null</span> = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// any 表示任意类型</span></span><br><span class="line"><span class="keyword">let</span> somevar: any = <span class="number">10</span></span><br><span class="line">somevar = <span class="string">'abc'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// never类型 一般用于在不可能返回内容的函数的返回值类型设置</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>):<span class="title">never</span></span>&#123;</span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">     </span><br><span class="line">&#125;</span><br><span class="line">     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -403,7 +381,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/学习/" rel="tag"># 学习</a>
+            <a href="/tags/随心/" rel="tag"># --随心</a>
           
         </div>
       
@@ -416,8 +394,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/22/HTML-事件句柄/" rel="next" title="HTML 事件句柄">
-                <i class="fa fa-chevron-left"></i> HTML 事件句柄
+              <a href="/2018/10/28/flow/" rel="next" title="flow">
+                <i class="fa fa-chevron-left"></i> flow
               </a>
             
           </div>
@@ -425,10 +403,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/18/Ajax缓存数据分页缓存/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -592,7 +566,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存在的问题"><span class="nav-number">2.</span> <span class="nav-text">存在的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于全局变量和window"><span class="nav-number">3.</span> <span class="nav-text">关于全局变量和window</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于全局变量污染"><span class="nav-number">4.</span> <span class="nav-text">关于全局变量污染</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减少污染"><span class="nav-number">5.</span> <span class="nav-text">减少污染</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名函数防止变量被污染"><span class="nav-number">6.</span> <span class="nav-text">匿名函数防止变量被污染</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TypeScript"><span class="nav-number">1.</span> <span class="nav-text">TypeScript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#是什么？"><span class="nav-number">1.1.</span> <span class="nav-text">是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用"><span class="nav-number">1.2.</span> <span class="nav-text">如何使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编写TS代码"><span class="nav-number">1.2.1.</span> <span class="nav-text">编写TS代码</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
